@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
    appBarStyle: {
       backgroundColor: "#F2F2F2",
       boxShadow: "none",
-      border: "1px solid #730217"
+      borderBottom: "1px solid #730217"
    },
    h6Style: {
       color: "#730217",
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
       fontWeight: "400",
    },
    avatarStyle: {
-      width: "300px",
+      width: "250px",
       height: "auto",
       borderRadius: 0,
       margin: "10px"
