@@ -1,11 +1,10 @@
 import React from "react";
-import Welcome from "./pages/Welcome";
+import Welcome from "./Pages/Welcome/Welcome";
 
 function App() {
   return (
     <Welcome />
-  );
-}
-
+  )
+};
 
 export default App;
