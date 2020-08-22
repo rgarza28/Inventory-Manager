@@ -1,19 +1,20 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const bcrypt = require("bcryptjs");
-
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 const User = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
   data: [UserData],
+});
 
 User.methods = {
-  checkPassword: function (inputPassword) {
+  checkPassword: (inputPassword) => {
     return bcrypt.compareSync(inputPassword, this.password);
   },
   hashPassword: (plainTextPassword) => {
-    return bcrypt.hashSync(plainTextPassword, 10);
+    return bcrypt.hashSync(plainTextPassword, saltRounds);
   },
 };
 
