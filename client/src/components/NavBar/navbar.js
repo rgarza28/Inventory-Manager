@@ -11,19 +11,17 @@ function Navbar() {
       <div className={classes.root}>
          <AppBar className={classes.appBarStyle} color="secondary" position="fixed">
             <Toolbar>
-               <Grid xs={4} >
-                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+               <Grid xs>
+                  {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                      <MenuIcon />
-                  </IconButton>
+                  </IconButton> */}
                   <Avatar className={classes.avatarStyle} src={logo} />
                </Grid>
-               <Grid xs={8}>
-                  <Typography variant="h6" className={classes.h6Style}>solutions</Typography> 
-                  <Typography variant="h6" className={classes.h6Style}>industries</Typography> 
-                  <Typography variant="h6" className={classes.h6Style}>pricing</Typography> 
+                  <Button className={classes.textButtonStyle}>solutions</Button> 
+                  <Button className={classes.textButtonStyle}>industries</Button> 
+                  <Button className={classes.textButtonStyle}>pricing</Button> 
                   <Button className={classes.textButtonStyle} variant="text">sign in</Button>
                   <Button className={classes.containedButtonStyle} variant="contained">get started</Button>
-               </Grid>
             </Toolbar>
          </AppBar>
       </div>
@@ -35,30 +33,24 @@ const useStyles = makeStyles((theme) => ({
    },
    menuButton: {
       marginRight: theme.spacing(2),
-      color: "#D97904"
+      color: "#D97904",
+      display: "inline",
    },
    appBarStyle: {
       backgroundColor: "#F2F2F2",
       borderBottom: "1px solid #730217",
       boxShadow: "none",
    },
-   h6Style: {
-      fontSize: "15px",
-      fontWeight: "400",
-      color: "#730217",
-      width: "100px",
-      margin: "5px",
-   },
    avatarStyle: {
       width: "250px",
       height: "auto",
       borderRadius: 0,
-      margin: "10px"
+      margin: "10px",
    },
    textButtonStyle: {
       backgroundColor: "transparent",
       color: "#730217",
-      padding: "10px 20px",
+      padding: "10px 30px",
       textTransform: "lowercase",
       fontSize: "15px",
       fontWeight: "400",
