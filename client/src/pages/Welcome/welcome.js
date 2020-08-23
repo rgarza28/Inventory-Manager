@@ -1,24 +1,19 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
 import Navbar from "../../components/Navbar/Navbar";
-import Features2 from "./Features/Features";
-import Features from "./Features-delete/Features";
+import Features from "./Features/Features";
+import Jumbotron from "./Jumbotron/Jumbotron";
+import Industries from "./Industries/Industries";
 
-function Welcome() {
-   const classes = useStyles();
-   
+function Welcome() { 
    return (
       <header>
          <Navbar />
+         <Jumbotron />
          <Features />
+         <Industries />
       </header>
    )
 };
-
-const useStyles = makeStyles({
-   root: {
-   },
-});
 
 
   

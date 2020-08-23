@@ -1,34 +1,30 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Card, CardContent, Container, Icon} from "@material-ui/core";
-import FeaturesData from "./features.json"
+import { Typography, Grid, Card, CardContent, Container} from "@material-ui/core";
+import IndustriesData from "./Industries.json"
 
-function Features() {
+function Industries() {
 
    const classes = useStyles();
    
    return (
-      <Container maxWidth="lg" >
+      <Container className={classes.containerStyle}>
          <Typography variant="h4" className={classes.titleStyle}>
-               Every inventory management feature your manufacturing business needs. 
+               Business that we help daily
          </Typography>
          <Grid container className={classes.gridContainerStyle}>
-            {FeaturesData.map(data => {
+            {IndustriesData.map(data => {
                return (
                   <Grid item className={classes.gridStyle} xs>
-                     <Card  Card className={classes.root} >
+                     <Card className={classes.root} >
                         <CardContent>
-                           <Icon className={classes.iconStyle}>{data.icon}</Icon>
                            <Typography className={classes.pos} >
-                              {data.title}
-                           </Typography>
-                           <Typography variant="body2" component="p" align="left">
-                              {data.description}
+                              {data.industry}
                            </Typography>
                         </CardContent>
                      </Card>
-                 </Grid>
-               )})};
+                  </Grid>
+               )})}
          </Grid>
       </Container>
    )
@@ -38,10 +34,15 @@ function Features() {
 const useStyles = makeStyles({
    root: {
       backgroundColor: "#F2F2F2",
-      boxShadow: "none",
+      boxShadow: "0 0 5px #184059",
+      margin: 20,
+   },
+   containerStyle: {
+      width: "100vw",
+      backgroundColor: "#184059",
    },
    titleStyle: {
-      color: "#184059",
+      color: "#F2F2F2",
       paddingTop: "80px",
       paddingBottom: "50px",
    },
@@ -56,10 +57,11 @@ const useStyles = makeStyles({
       fontSize: "40px",      
    },
    pos: {
+      textTransform: "uppercase",
       fontWeight: "400",
       margin: "20px 0",
-      color: "#5D8AA6",
+      color: "#184059",
    }
 });
 
-export default Features;
+export default Industries;
