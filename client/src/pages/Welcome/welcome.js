@@ -1,9 +1,8 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import BuildIcon from '@material-ui/icons/Build';
-import { Typography, Grid, Card, CardActions, CardContent, Button, Icon } from "@material-ui/core";
 import Navbar from "../../components/Navbar/Navbar";
-import Features from "./Features/Features";
+import Features2 from "./Features/Features";
+import Features from "./Features-delete/Features";
 
 function Welcome() {
    const classes = useStyles();
