@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Card, CardContent, Container} from "@material-ui/core";
+import { Typography, Grid, Card, CardContent, Container, CardMedia } from "@material-ui/core";
 import IndustriesData from "./Industries.json"
 
 function Industries() {
@@ -17,6 +17,11 @@ function Industries() {
                return (
                   <Grid item className={classes.gridStyle} xs>
                      <Card className={classes.root} >
+                        <CardMedia 
+                           className={classes.media}
+                           image={data.photo} 
+                           title={data.industry} 
+                        />
                         <CardContent>
                            <Typography className={classes.pos} >
                               {data.industry}
@@ -37,6 +42,9 @@ const useStyles = makeStyles({
       boxShadow: "0 0 8px #730217",
       margin: 20,
    },
+   media: {
+      height: 140,
+    },
    containerStyle: {
       backgroundColor: "#D97904",
       width: "100vw",
@@ -56,14 +64,10 @@ const useStyles = makeStyles({
    gridContainerStyle: {
       padding: "20px",
    },
-   iconStyle: {
-      color: "#184059",
-      fontSize: "40px",      
-   },
    pos: {
       textTransform: "uppercase",
       fontWeight: "400",
-      margin: "20px 0",
+      margin: 0,
       color: "#730217",
    }
 });
