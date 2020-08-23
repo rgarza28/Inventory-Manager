@@ -1,29 +1,38 @@
 [
    {
-      "industry": "Manufacturing"
+      "industry": "Manufacturing",
+      "photo": "/img/industries/manufacturing.jpg"
    },   
    {
-      "industry": "Wholesale"
+      "industry": "Wholesale",
+      "photo": "/img/industries/wholesale.jpg"
    },   
    {
-      "industry": "Distribution"
+      "industry": "Distribution",
+      "photo": "/img/industries/distribution.jpg"
    },   
    {
-      "industry": "Retail"
+      "industry": "Retail",
+      "photo": "/img/industries/retail.jpg"
    },   
    {
-      "industry": "Food Manufacturing"
+      "industry": "Food Manufacturing",
+      "photo": "/img/industries/food.jpg"
    },   
    {
-      "industry": "Brewing"
+      "industry": "Brewing",
+      "photo": "/img/industries/brewing.jpg"
    },   
    {
-      "industry": "Coffee Roasting"
+      "industry": "Coffee Roasting",
+      "photo": "/img/industries/coffee.jpg"
    },   
    {
-      "industry": "Health & Supplements"
+      "industry": "Health & Supplements",
+      "photo": "/img/industries/drugs.jpg"
    },   
    {
-      "industry": "Lighting"
+      "industry": "Lighting",
+      "photo": "/img/industries/lights.jpg"
    } 
 ]
