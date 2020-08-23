@@ -1,25 +1,29 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import { AppBar, Toolbar, Typography, Button, IconButton, Avatar } from '@material-ui/core';
-import logo from "./logo-horizontal.png"
+import { AppBar, Toolbar, Typography, Button, IconButton, Avatar, Grid } from '@material-ui/core';
+import logo from "./logo-horizontal.png";
 
 function Navbar() {
    const classes = useStyles();
    
    return (
       <div className={classes.root}>
-         <AppBar className={classes.appBarStyle} color="secondary" position="static">
-            <Toolbar justify="space-between">
-               <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                  <MenuIcon />
-               </IconButton>
-               <Avatar className={classes.avatarStyle} src={logo} />
-               <Typography variant="h6" className={classes.h6Style}>solutions</Typography> 
-               <Typography variant="h6" className={classes.h6Style}>industries</Typography> 
-               <Typography variant="h6" className={classes.h6Style}>pricing</Typography> 
-               <Button className={classes.textButtonStyle} variant="text">sign in</Button>
-               <Button className={classes.containedButtonStyle} variant="contained">get started</Button>
+         <AppBar className={classes.appBarStyle} color="secondary" position="fixed">
+            <Toolbar>
+               <Grid xs={4} >
+                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                     <MenuIcon />
+                  </IconButton>
+                  <Avatar className={classes.avatarStyle} src={logo} />
+               </Grid>
+               <Grid xs={8}>
+                  <Typography variant="h6" className={classes.h6Style}>solutions</Typography> 
+                  <Typography variant="h6" className={classes.h6Style}>industries</Typography> 
+                  <Typography variant="h6" className={classes.h6Style}>pricing</Typography> 
+                  <Button className={classes.textButtonStyle} variant="text">sign in</Button>
+                  <Button className={classes.containedButtonStyle} variant="contained">get started</Button>
+               </Grid>
             </Toolbar>
          </AppBar>
       </div>
@@ -28,7 +32,6 @@ function Navbar() {
 
 const useStyles = makeStyles((theme) => ({
    root: {
-      flexGrow: 1,
    },
    menuButton: {
       marginRight: theme.spacing(2),
@@ -36,14 +39,15 @@ const useStyles = makeStyles((theme) => ({
    },
    appBarStyle: {
       backgroundColor: "#F2F2F2",
+      borderBottom: "1px solid #730217",
       boxShadow: "none",
-      borderBottom: "1px solid #730217"
    },
    h6Style: {
-      color: "#730217",
       fontSize: "15px",
-      margin: "5px",
       fontWeight: "400",
+      color: "#730217",
+      width: "100px",
+      margin: "5px",
    },
    avatarStyle: {
       width: "250px",
