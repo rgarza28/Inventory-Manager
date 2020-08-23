@@ -9,10 +9,10 @@ function Jumbotron() {
    return (
       <CardMedia className={classes.imageBackground} image={background} >
          <Typography variant="h2" className={classes.jumbotronTitleStyle}>
-            Grow your manufacturing business with smarter inventory management.
+            Grow your manufacturing business with smarter inventory management
          </Typography>
          <Typography variant="h6" className={classes.h6Style}>
-            Chief System’s inventory management software is perfectly suited to businesses in the manufacturing industry who require an accurate finished goods cost. Product assemblies, costed purchase orders, multi-currency, and advanced reporting are just a few of Chief System’s powerful features which make this possible.
+            Chief System’s inventory management software is perfectly suited to businesses in the manufacturing industry who require an accurate finished goods cost. Product assemblies, costed purchase orders, multi-currency, and advanced reporting are just a few of Chief System’s powerful features which make this possible
          </Typography>
          <Button className={classes.containedButtonStyle} >
             Start your free trial now
@@ -42,7 +42,7 @@ const useStyles = makeStyles({
       margin: "0 auto 3%",
    },
    containedButtonStyle: {
-      backgroundColor: "#5D8AA6",
+      backgroundColor: "#BF0426",
       color: "#F2F2F2",
       padding: "10px 20px",
       boxShadow: "none",
@@ -50,7 +50,7 @@ const useStyles = makeStyles({
       fontSize: "15px",
       fontWeight: "400",
       "&:hover": {
-         backgroundColor: "#BF0426",
+         backgroundColor: "#D97904",
          boxShadow: "none"
       }
    }

@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid, Card, CardContent, Container, Icon} from "@material-ui/core";
-import FeaturesData from "./features.json"
+import FeaturesData from "./features.json";
 
 function Features() {
 
@@ -10,7 +10,7 @@ function Features() {
    return (
       <Container maxWidth="lg" >
          <Typography variant="h4" className={classes.titleStyle}>
-               Every inventory management feature your manufacturing business needs. 
+               Every inventory management feature your manufacturing business needs
          </Typography>
          <Grid container className={classes.gridContainerStyle}>
             {FeaturesData.map(data => {
@@ -28,7 +28,7 @@ function Features() {
                         </CardContent>
                      </Card>
                  </Grid>
-               )})};
+               )})}
          </Grid>
       </Container>
    )
@@ -42,6 +42,8 @@ const useStyles = makeStyles({
    },
    titleStyle: {
       color: "#184059",
+      width: "90%",
+      margin: "0 auto",
       paddingTop: "80px",
       paddingBottom: "50px",
    },
