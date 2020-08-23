@@ -8,7 +8,7 @@ function Industries() {
    const classes = useStyles();
    
    return (
-      <Container className={classes.containerStyle}>
+      <Container maxWidth="false" className={classes.containerStyle}>
          <Typography variant="h4" className={classes.titleStyle}>
                The industries we help to grow their businesses
          </Typography>
@@ -41,6 +41,7 @@ const useStyles = makeStyles({
       backgroundColor: "#D97904",
       width: "100vw",
       margin: "0 auto",
+      paddingBottom: "50px",
    },
    titleStyle: {
       color: "#F2F2F2",

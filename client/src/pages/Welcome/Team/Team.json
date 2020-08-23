@@ -1,0 +1,22 @@
+[
+   {
+      "photo": "/img/customers/Sidney_Lucas.jpg",
+      "specialty": "Backend Developer",
+      "name": "Gerardo Gandara"
+   },   
+   {
+      "photo": "/img/customers/Sidney_Lucas.jpg",
+      "specialty": "Backend Developer",
+      "name": "Robert Garza"
+   },   
+   {
+      "photo": "/img/customers/Sidney_Lucas.jpg",
+      "specialty": "Data Specialist",
+      "name": "Erick Adams"
+   },   
+   {
+      "photo": "/img/customers/Sidney_Lucas.jpg",
+      "specialty": "Frontend Developer",
+      "name": "Jeuel Viveros"
+   }   
+]
