@@ -4,6 +4,7 @@ import Features from "./Features/Features";
 import Jumbotron from "./Jumbotron/Jumbotron";
 import Industries from "./Industries/Industries";
 import Customers from "./Customers/Customers";
+import Team from "./Team/Team";
 
 function Welcome() { 
    return (
@@ -13,6 +14,7 @@ function Welcome() {
          <Features />
          <Industries />
          <Customers />
+         <Team />
       </header>
    )
 };
