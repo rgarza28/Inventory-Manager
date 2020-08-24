@@ -1,24 +1,8 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+/* Color Theme Swatches in Hex */
+.p1 { color: #730217; }
+.p2 { color: #BF0426; }
+.p3 { color: #D97904; }
+.s2 { color: #184059; }
+.s2 { color: #5D8AA6; }
+.wt { color: #F2F2F2; }
+.lg { color: #D7D7D9; }

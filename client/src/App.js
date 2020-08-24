@@ -1,11 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Route, Link, Switch } from "react-router-dom";
+import React from "react";
+import Welcome from "./Pages/Welcome/Welcome";
 // components
 import Signup from "./components/sign-up";
 import LoginForm from "./components/login-form";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
+
+function App() {
+  return (
+    <Welcome />
+  )
+};
 
 class App extends Component {
   constructor() {
