@@ -7,7 +7,7 @@ function Team() {
   const classes = useStyles();
 
   return (
-   <Container maxWidth="false" className={classes.containerStyle} >
+   <Container maxWidth="false" className={classes.containerStyle} id="team">
       <Typography variant="h4" className={classes.titleStyle}>
          Meet the brains behind Chief System
       </Typography>
@@ -24,6 +24,9 @@ function Team() {
                            </Typography>
                            <Typography variant="body2">
                               {data.specialty}
+                           </Typography>
+                           <Typography variant="h5" component="h2" className={classes.descriptionStyle}>
+                              {data.description}
                            </Typography>
                         </CardContent>
                         <Avatar 
@@ -59,7 +62,7 @@ const useStyles = makeStyles({
       width: "90%",
       margin: "0 auto",
       paddingTop: "80px",
-      paddingBottom: "50px",
+      paddingBottom: "20px",
    },
    subtitleStyle: {
       fontWeight: 400,
@@ -79,6 +82,10 @@ const useStyles = makeStyles({
    gridStyle: {
       minWidth: 250,
       margin: "0 20px",
+   },
+   descriptionStyle: {
+      marginTop: "20px",
+      fontStyle: "italic",
    },
    avatarStyle: {
       width: "180px",

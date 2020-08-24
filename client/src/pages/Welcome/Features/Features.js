@@ -8,9 +8,9 @@ function Features() {
    const classes = useStyles();
    
    return (
-      <Container maxWidth="lg" >
+      <Container maxWidth="lg" id="features">
          <Typography variant="h4" className={classes.titleStyle}>
-               Every inventory management feature your manufacturing business needs
+               Every inventory management feature your business needs
          </Typography>
          <Grid container className={classes.gridContainerStyle}>
             {FeaturesData.map(data => {

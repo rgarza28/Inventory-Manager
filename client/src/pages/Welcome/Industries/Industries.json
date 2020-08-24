@@ -30,9 +30,5 @@
    {
       "industry": "Health & Supplements",
       "photo": "/img/industries/drugs.jpg"
-   },   
-   {
-      "industry": "Lighting",
-      "photo": "/img/industries/lights.jpg"
-   } 
+   }
 ]

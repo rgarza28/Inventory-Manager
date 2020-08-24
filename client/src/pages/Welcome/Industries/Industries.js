@@ -8,9 +8,9 @@ function Industries() {
    const classes = useStyles();
    
    return (
-      <Container maxWidth="false" className={classes.containerStyle}>
+      <Container maxWidth="false" className={classes.containerStyle} id="industries">
          <Typography variant="h4" className={classes.titleStyle}>
-               The industries we help to grow their businesses
+               The businesses we help to grow
          </Typography>
          <Grid container className={classes.gridContainerStyle}>
             {IndustriesData.map(data => {
@@ -59,7 +59,7 @@ const useStyles = makeStyles({
       paddingBottom: "50px",
    },
    gridStyle: {
-      minWidth: 250,
+      minWidth: 350,
    },
    gridContainerStyle: {
       padding: "20px",

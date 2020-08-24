@@ -9,7 +9,7 @@ function Jumbotron() {
    return (
       <CardMedia className={classes.imageBackground} image={background} >
          <Typography variant="h2" className={classes.jumbotronTitleStyle}>
-            Grow your manufacturing business with smarter inventory management
+            Grow your business with smarter inventory management
          </Typography>
          <Typography variant="h6" className={classes.h6Style}>
             Chief System’s inventory management software is perfectly suited to businesses in the manufacturing industry who require an accurate finished goods cost. Product assemblies, costed purchase orders, multi-currency, and advanced reporting are just a few of Chief System’s powerful features which make this possible

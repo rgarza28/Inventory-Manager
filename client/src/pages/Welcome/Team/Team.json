@@ -1,22 +1,26 @@
 [
    {
       "photo": "/img/customers/Sidney_Lucas.jpg",
+      "name": "Gerardo Gandara",
       "specialty": "Backend Developer",
-      "name": "Gerardo Gandara"
+      "description": "“A bug that accidentally generates money”"
    },   
    {
       "photo": "/img/customers/Sidney_Lucas.jpg",
+      "name": "Robert Garza",
       "specialty": "Backend Developer",
-      "name": "Robert Garza"
+      "description": "“I don't know how it works, but it works”"
    },   
    {
       "photo": "/img/customers/Sidney_Lucas.jpg",
-      "specialty": "Data Specialist",
-      "name": "Erick Adams"
-   },   
-   {
-      "photo": "/img/customers/Sidney_Lucas.jpg",
+      "name": "Erick Adams",
       "specialty": "Frontend Developer",
-      "name": "Jeuel Viveros"
+      "description": "“All business in the front, party in the back end”"
+   },   
+   {
+      "photo": "/img/customers/Sidney_Lucas.jpg",
+      "name": "Jeuel Viveros",
+      "specialty": "Frontend Developer",
+      "description": "“It works in my computer”"
    }   
 ]
