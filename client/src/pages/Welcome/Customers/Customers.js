@@ -7,7 +7,7 @@ function Customers() {
   const classes = useStyles();
 
   return (
-   <Container maxWidth="lg" className={classes.containerStyle} >
+   <Container maxWidth="lg" className={classes.containerStyle} id="customers">
       <Typography variant="h4" className={classes.titleStyle}>
          Thousands of happy customers in 80+ countries
       </Typography>
@@ -26,7 +26,7 @@ function Customers() {
                            alt={data.name}
                         />
                         <CardContent className={classes.cardContentStyle}>
-                           <Typography gutterBottom variant="h5" component="h2">
+                           <Typography gutterBottom variant="h5" component="h2" className={classes.reviewStyle}>
                               {data.review}
                            </Typography>
                            <Typography className={classes.descriptionStyle} variant="body2">
@@ -91,6 +91,9 @@ const useStyles = makeStyles({
       borderRadius: "50%",
       border: "solid 5px #F2F2F2",
       boxShadow: "0 0 15px #184059",
+   },
+   reviewStyle: {
+      fontStyle: "italic",
    },
    descriptionStyle: {
       padding: "20px 0",
