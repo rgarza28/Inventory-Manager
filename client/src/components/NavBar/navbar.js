@@ -97,4 +97,4 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default Navbar;
+export default Navbar1;
