@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const config = require("config");
+const dotenv = require('dotenv').config();
 
 const app = express();
 
@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // DB Config
-const db = config.get("mongoURI");
+const db = process.env.MONGODB_URI;
 
 // Connect to Mongo
 mongoose
