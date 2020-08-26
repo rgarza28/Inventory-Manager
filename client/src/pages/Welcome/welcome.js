@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/NavBar/navbar";
 import Features from "./Features/Features";
 import Jumbotron from "./Jumbotron/Jumbotron";
 import Industries from "./Industries/Industries";
