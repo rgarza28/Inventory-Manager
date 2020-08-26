@@ -8,22 +8,19 @@ import Pricing from "./Pricing/Pricing";
 import Team from "./Team/Team";
 import Footer from "./Footer/Footer";
 
+function Welcome() {
+  return (
+    <header>
+      <Navbar />
+      <Jumbotron />
+      <Features />
+      <Industries />
+      <Customers />
+      {/* <Pricing /> */}
+      <Team />
+      {/* <Footer /> */}
+    </header>
+  );
+}
 
-function Welcome() { 
-   return (
-      <header>
-         <Navbar />
-         <Jumbotron />
-         <Features />
-         <Industries />
-         <Customers />
-         {/* <Pricing /> */}
-         <Team />
-         {/* <Footer /> */}
-      </header>
-   )
-};
-
-
-  
 export default Welcome;
