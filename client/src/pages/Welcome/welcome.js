@@ -25,4 +25,4 @@ function Welcome() {
   );
 }
 
-export default Welcome1;
+export default Welcome;
