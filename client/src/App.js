@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import axios from "axios";
 import { Route, Link, Switch } from "react-router-dom";
@@ -8,53 +9,82 @@ import LoginForm from "./components/login-form";
 import Navbar from "./components/Navbar/Navbar";
 // import Home from "./components/home";
 
-// function App() {
-//   return (
-//     <Welcome />
-//   )
-// };
+function App() {
+  return (
+    <Welcome />
+  )
+};
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loggedIn: false,
-      username: null,
-    };
 
-    this.getUser = this.getUser.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
-    this.updateUser = this.updateUser.bind(this);
-  }
+// class App extends Component {
+//    constructor() {
+//       super();
+//       this.state = {
+//          loggedIn: false,
+//          username: null,
+//       };
 
-  componentDidMount() {
-    this.getUser();
-  }
+//       this.getUser = this.getUser.bind(this);
+//       this.componentDidMount = this.componentDidMount.bind(this);
+//       this.updateUser = this.updateUser.bind(this);
+//    }
 
-  updateUser(userObject) {
-    this.setState(userObject);
-  }
+//    componentDidMount() {
+//       this.getUser();
+//    }
 
-  getUser() {
-    axios.get("/user").then((response) => {
-      console.log("Get user response: ");
-      console.log(response.data);
-      if (response.data.user) {
-        console.log("Get User: There is a user saved in the server session: ");
+//    updateUser(userObject) {
+//       this.setState(userObject);
+//    }
 
-        this.setState({
-          loggedIn: true,
-          username: response.data.user.username,
-        });
-      } else {
-        console.log("Get user: no user");
-        this.setState({
-          loggedIn: false,
-          username: null,
-        });
-      }
-    });
-  }
+//    getUser() {
+//       axios.get('/user').then((response) => {
+//          console.log('Get user response: ');
+//          console.log(response.data);
+//          if (response.data.user) {
+//             console.log(
+//                'Get User: There is a user saved in the server session: '
+//             );
+
+//             this.setState({
+//                loggedIn: true,
+//                username: response.data.user.username,
+//             });
+//          } else {
+//             console.log('Get user: no user');
+//             this.setState({
+//                loggedIn: false,
+//                username: null,
+//             });
+//          }
+//       });
+//    }
+
+
+//    render() {
+//       return (
+//          <div className="App">
+//             <Navbar
+//                updateUser={this.updateUser}
+//                loggedIn={this.state.loggedIn}
+//             />
+//             {/* greet user if logged in: */}
+//             {this.state.loggedIn && (
+//                <p>Join the party, {this.state.username}!</p>
+//             )}
+//             {/* Routes to different components */}
+//             <Switch>
+//                <Route exact path="/" component={Home} />
+//                <Route
+//                   path="/login"
+//                   render={() => <LoginForm updateUser={this.updateUser} />}
+//                />
+//                <Route path="/signup" render={() => <Signup />} />
+//             </Switch>
+//          </div>
+//       );
+//    }
+// }
 
   render() {
     return (
@@ -77,5 +107,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
