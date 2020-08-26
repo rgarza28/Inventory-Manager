@@ -1,34 +1,49 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 
-const User = new Schema({
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: false, unique: true },
-  password: { type: String, required: true },
-  data: [UserData]
+const UserSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    data: {
+        sku: { 
+            type: Number
+        },
+        productName: { 
+            type: String
+        },
+        description: { 
+            type: String 
+        },
+        currentInventory: { 
+            type: Number
+        },
+        minInventory: { 
+            type: Number 
+        },
+        cost: { 
+            type: Number 
+        },
+        retail: { 
+            type: Number 
+        }
+    },
+    date: {
+        type: Date,
+        default:Date.now
+    }
 });
 
-User.methods = {
-  checkPassword: (inputPassword) => {
-    return bcrypt.compareSync(inputPassword, this.password);
-  },
-  hashPassword: (plainTextPassword) => {
-    return bcrypt.hashSync(plainTextPassword, saltRounds);
-  },
-};
 
-const UserData = new Schema({
-  sku: { type: Number, required: true },
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  currentInventory: { type: Number, required: true },
-  minInventory: { type: Number, required: true },
-  cost: { type: Number, required: true },
-  retail: { type: Number, required: true },
-});
-
-const Users = mongoose.model("User", User);
-
-module.exports = Users;
+module.exports = User = mongoose.model("user", UserSchema);
