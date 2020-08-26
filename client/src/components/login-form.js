@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import { Route, Link, Switch } from "react-router-dom";
 
 class LoginForm extends Component {
   constructor() {
@@ -103,6 +104,12 @@ class LoginForm extends Component {
               >
                 Login
               </button>
+            </div>
+            <div className="form-group ">
+              <div className="col-7"></div>
+              <Link variant="text" component={Link} to={"/signup"}>
+                Sign up
+              </Link>
             </div>
           </form>
         </div>

@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Route, Link, Switch } from 'react-router-dom';
-import Welcome from './Pages/Welcome/Welcome';
+
+import React, { Component } from "react";
+import axios from "axios";
+import { Route, Link, Switch } from "react-router-dom";
+import Welcome from "./pages/Welcome/Welcome";
 // components
-import Signup from './components/sign-up';
-import LoginForm from './components/login-form';
-// import Navbar from './components/Navbar';
-// import Home from './components/home';
+import Signup from "./components/sign-up";
+import LoginForm from "./components/login-form";
+import Navbar from "./components/Navbar/Navbar";
+// import Home from "./components/home";
 
 function App() {
-   return <Welcome />;
-}
+  return (
+    <Welcome />
+  )
+};
+
 
 // class App extends Component {
 //    constructor() {
@@ -56,6 +60,7 @@ function App() {
 //       });
 //    }
 
+
 //    render() {
 //       return (
 //          <div className="App">
@@ -80,5 +85,28 @@ function App() {
 //       );
 //    }
 // }
+
+  render() {
+    return (
+      <div className="App">
+        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <br />
+
+        {/* greet user if logged in: */}
+        {this.state.loggedIn && <p>Join the party, {this.state.username}!</p>}
+        {/* Routes to different components */}
+        <Switch>
+          <Route exact path="/" component={Welcome} />
+          <Route
+            path="/login"
+            render={() => <LoginForm updateUser={this.updateUser} />}
+          />
+          <Route path="/signup" render={() => <Signup />} />
+        </Switch>
+      </div>
+    );
+  }
+}
+
 
 export default App;
