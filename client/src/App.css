@@ -6,3 +6,11 @@
 .s2 { color: #5D8AA6; }
 .wt { color: #F2F2F2; }
 .lg { color: #D7D7D9; }
+
+
+/* Color Theme Swatches in RGBA */
+.Travel-1-rgba { color: rgba(214, 214, 216, 1); }
+.Travel-2-rgba { color: rgba(24, 64, 89, 1); }
+.Travel-3-rgba { color: rgba(92, 137, 165, 1); }
+.Travel-4-rgba { color: rgba(191, 122, 63, 1); }
+.Travel-5-rgba { color: rgba(140, 47, 26, 1); }
