@@ -46,6 +46,10 @@ const useStyles = makeStyles({
    },
    imageBackground: {
       minHeight: '100vh',
+      // backgroundImage: 'url(.img/tedtalk/fakeTedTalk.png)',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center left',
    },
    iconButtonStyle: {
       color: '#F2F2F2',

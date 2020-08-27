@@ -8,7 +8,7 @@ import {
    Container,
    Icon,
 } from '@material-ui/core';
-import FeaturesData from './features.json';
+import FeaturesData from './Features.json';
 
 function Features() {
    const classes = useStyles();

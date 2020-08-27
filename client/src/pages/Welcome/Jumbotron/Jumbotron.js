@@ -7,7 +7,11 @@ function Jumbotron() {
    const classes = useStyles();
 
    return (
-      <CardMedia className={classes.imageBackground} image={background}>
+      <CardMedia
+         className={classes.imageBackground}
+         image={background}
+         id="welcome"
+      >
          <Typography variant="h2" className={classes.jumbotronTitleStyle}>
             Grow your business with smarter inventory management
          </Typography>

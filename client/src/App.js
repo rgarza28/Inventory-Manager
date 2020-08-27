@@ -1,12 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Route, Link, Switch } from 'react-router-dom';
-import Welcome from './Pages/Welcome/Welcome';
-// components
-import Signup from './components/sign-up';
-import LoginForm from './components/login-form';
-// import Navbar from './components/Navbar';
-// import Home from './components/home';
+import React from 'react';
+import Welcome from './pages/Welcome/Welcome';
 
 function App() {
    return <Welcome />;
