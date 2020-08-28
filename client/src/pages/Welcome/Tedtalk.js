@@ -8,7 +8,7 @@ import {
    Grid,
 } from '@material-ui/core';
 import PlayArrow from '@material-ui/icons/PlayArrow';
-import TedtalkBackground from './fakeTedTalk.png';
+import TedTalkBackground from './images/fakeTedTalk.png';
 
 function Tedtalk() {
    const classes = useStyles();
@@ -16,7 +16,7 @@ function Tedtalk() {
    return (
       <CardMedia
          className={classes.imageBackground}
-         image={TedtalkBackground}
+         image={TedTalkBackground}
          title="Featured on Fake TedTalk"
       >
          <Grid xs={6} style={{ textAlign: 'left', marginLeft: '50px' }}>
@@ -46,10 +46,10 @@ const useStyles = makeStyles({
    },
    imageBackground: {
       minHeight: '100vh',
-      // backgroundImage: 'url(.img/tedtalk/fakeTedTalk.png)',
+      // backgroundImage: 'url(./images/fakeTedTalk.png)',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      backgroundPosition: 'center left',
+      backgroundPosition: 'center right',
    },
    iconButtonStyle: {
       color: '#F2F2F2',

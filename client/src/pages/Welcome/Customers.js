@@ -9,7 +9,6 @@ import {
    Grid,
    Avatar,
 } from '@material-ui/core';
-import CustomersData from './Customers.json';
 
 function Customers() {
    const classes = useStyles();
@@ -29,7 +28,7 @@ function Customers() {
             your profits and margins for your manufacturing business today.
          </Typography>
          <Grid container className={classes.gridContainerStyle}>
-            {CustomersData.map((data) => {
+            {customersData.map((data) => {
                return (
                   <Grid item className={classes.gridStyle} xs>
                      <Card className={classes.root}>
@@ -134,5 +133,35 @@ const useStyles = makeStyles({
       color: '#5D8AA6',
    },
 });
+
+const customersData = [
+   {
+      photo: '/img/customers/Sidney_Lucas.jpg',
+      review:
+         '“Chief System ticks all the boxes for our food production inventory management.”',
+      description:
+         'Processing 1,000+ tonnes of cashews per year and producing 60+ value-added SKUs for the international retail market is a difficult feat, but one made easier with Chief System by our side.',
+      name: 'Sidney Lucas',
+      company: 'West Mumbai Almonds',
+   },
+   {
+      photo: '/img/customers/Riley_Moore.jpg',
+      review:
+         '“Chief System is the first thing we turn on and the last thing we turn off each day.”',
+      description:
+         'With over 20 years of experience in the food business I have to tell that switching to Chief System was the best thing our company ever did.',
+      name: 'Riley Moore',
+      company: 'Brinker International',
+   },
+   {
+      photo: '/img/customers/Franky_Cunningham.jpg',
+      review:
+         '“Chief System has proven to be the winner for so many of the things we look for.”',
+      description:
+         'Coming from a supply chain management background I’ve had a lot of experience working with ERP systems and found that Chief System offers a good balance of ease of use, with enough features that are truly useful to an organization.',
+      name: 'Franky Cunningham',
+      company: 'Warrior Motorcycle',
+   },
+];
 
 export default Customers;

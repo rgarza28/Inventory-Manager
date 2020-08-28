@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button, CardMedia } from '@material-ui/core';
-import background from './globe.jpg';
+import background from './images/globe.jpg';
+import { Link } from 'react-router-dom';
 
 function Jumbotron() {
    const classes = useStyles();
@@ -22,9 +23,11 @@ function Jumbotron() {
             multi-currency, and advanced reporting are just a few of Chief
             System’s powerful features which make this possible
          </Typography>
-         <Button className={classes.containedButtonStyle}>
-            Start your free trial now
-         </Button>
+         <Link to="/signup">
+            <Button className={classes.containedButtonStyle}>
+               Start your free trial now
+            </Button>
+         </Link>
       </CardMedia>
    );
 }
