@@ -8,7 +8,6 @@ import {
    Container,
    CardMedia,
 } from '@material-ui/core';
-import IndustriesData from './Industries.json';
 
 function Industries() {
    const classes = useStyles();
@@ -23,7 +22,7 @@ function Industries() {
             The businesses we help to grow
          </Typography>
          <Grid container className={classes.gridContainerStyle}>
-            {IndustriesData.map((data) => {
+            {industriesData.map((data) => {
                return (
                   <Grid item className={classes.gridStyle} xs>
                      <Card className={classes.root}>
@@ -82,5 +81,40 @@ const useStyles = makeStyles({
       color: '#730217',
    },
 });
+
+const industriesData = [
+   {
+      industry: 'Manufacturing',
+      photo: '/img/industries/manufacturing.jpg',
+   },
+   {
+      industry: 'Wholesale',
+      photo: '/img/industries/wholesale.jpg',
+   },
+   {
+      industry: 'Distribution',
+      photo: '/img/industries/distribution.jpg',
+   },
+   {
+      industry: 'Retail',
+      photo: '/img/industries/retail.jpg',
+   },
+   {
+      industry: 'Food Manufacturing',
+      photo: '/img/industries/food.jpg',
+   },
+   {
+      industry: 'Brewing',
+      photo: '/img/industries/brewing.jpg',
+   },
+   {
+      industry: 'Coffee Roasting',
+      photo: '/img/industries/coffee.jpg',
+   },
+   {
+      industry: 'Health & Supplements',
+      photo: '/img/industries/drugs.jpg',
+   },
+];
 
 export default Industries;

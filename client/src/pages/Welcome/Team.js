@@ -9,7 +9,6 @@ import {
    Grid,
    Avatar,
 } from '@material-ui/core';
-import TeamData from './Team.json';
 
 function Team() {
    const classes = useStyles();
@@ -24,7 +23,7 @@ function Team() {
             className={classes.subtitleStyle}
          ></Typography>
          <Grid container className={classes.gridContainerStyle}>
-            {TeamData.map((data) => {
+            {teamData.map((data) => {
                return (
                   <Grid item className={classes.gridStyle} xs>
                      <Card className={classes.root}>
@@ -124,5 +123,32 @@ const useStyles = makeStyles({
       color: '#5D8AA6',
    },
 });
+
+const teamData = [
+   {
+      photo: '/img/customers/Sidney_Lucas.jpg',
+      name: 'Gerardo Gandara',
+      specialty: 'Backend Developer',
+      description: '“A bug that accidentally generates money”',
+   },
+   {
+      photo: '/img/customers/Sidney_Lucas.jpg',
+      name: 'Robert Garza',
+      specialty: 'Backend Developer',
+      description: "“I don't know how it works, but it works”",
+   },
+   {
+      photo: '/img/customers/Sidney_Lucas.jpg',
+      name: 'Erick Adams',
+      specialty: 'Frontend Developer',
+      description: '“All business in the front, party in the back end”',
+   },
+   {
+      photo: '/img/customers/Sidney_Lucas.jpg',
+      name: 'Jeuel Viveros',
+      specialty: 'Frontend Developer',
+      description: '“What? It works in my computer”',
+   },
+];
 
 export default Team;
