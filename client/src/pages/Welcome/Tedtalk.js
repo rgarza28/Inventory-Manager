@@ -40,13 +40,12 @@ function Tedtalk() {
    );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
    root: {
       maxWidth: 345,
    },
    imageBackground: {
       minHeight: '100vh',
-      // backgroundImage: 'url(./images/fakeTedTalk.png)',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center right',
@@ -54,7 +53,7 @@ const useStyles = makeStyles({
    iconButtonStyle: {
       color: '#F2F2F2',
       width: 150,
-      height: 150,
+      height: 'auto',
       marginTop: '50px',
       borderRadius: '50%',
       border: '2px solid #f2f2f2',
@@ -63,11 +62,17 @@ const useStyles = makeStyles({
          border: '2px solid #D7D7D9',
          boxShadow: '0 0 10px #F2F2F2, inset 0 0 10px #F2F2F2',
       },
+      [theme.breakpoints.down('xs')]: {
+         width: '75px',
+      },
    },
    videoTitleStyle: {
       textAlign: 'left',
       color: '#F2F2F2',
       marginTop: '30px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '30px',
+      },
    },
    speakerStyle: {
       textAlign: 'left',
@@ -88,6 +93,6 @@ const useStyles = makeStyles({
          boxShadow: 'none',
       },
    },
-});
+}));
 
 export default Tedtalk;

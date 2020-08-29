@@ -27,7 +27,11 @@ function Customers() {
             provide an accurate cost for finished goods. Get clear visibility of
             your profits and margins for your manufacturing business today.
          </Typography>
-         <Grid container className={classes.gridContainerStyle}>
+         <Grid
+            container
+            className={classes.gridContainerStyle}
+            justify="center"
+         >
             {customersData.map((data) => {
                return (
                   <Grid item className={classes.gridStyle} xs>
@@ -73,9 +77,10 @@ function Customers() {
    );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
    root: {
       marginTop: 'none',
+      marginBottom: 30,
    },
    media: {
       height: 140,
@@ -90,6 +95,9 @@ const useStyles = makeStyles({
       margin: '0 auto',
       paddingTop: '80px',
       paddingBottom: '20px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '30px',
+      },
    },
    subtitleStyle: {
       fontWeight: 400,
@@ -97,6 +105,9 @@ const useStyles = makeStyles({
       width: '80%',
       margin: '0 auto',
       paddingBottom: '20px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '16px',
+      },
    },
    cardContentStyle: {
       padding: '30px',
@@ -108,6 +119,7 @@ const useStyles = makeStyles({
    },
    gridStyle: {
       minWidth: 250,
+      maxWidth: 250,
       margin: '0 20px',
    },
    avatarStyle: {
@@ -132,7 +144,7 @@ const useStyles = makeStyles({
       margin: '20px 0',
       color: '#5D8AA6',
    },
-});
+}));
 
 const customersData = [
    {

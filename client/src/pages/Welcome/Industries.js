@@ -13,39 +13,41 @@ function Industries() {
    const classes = useStyles();
 
    return (
-      <Container
-         maxWidth="false"
-         className={classes.containerStyle}
-         id="industries"
-      >
-         <Typography variant="h3" className={classes.titleStyle}>
-            The businesses we help to grow
-         </Typography>
-         <Grid container className={classes.gridContainerStyle}>
-            {industriesData.map((data) => {
-               return (
-                  <Grid item className={classes.gridStyle} xs>
-                     <Card className={classes.root}>
-                        <CardMedia
-                           className={classes.media}
-                           image={data.photo}
-                           title={data.industry}
-                        />
-                        <CardContent>
-                           <Typography className={classes.pos}>
-                              {data.industry}
-                           </Typography>
-                        </CardContent>
-                     </Card>
-                  </Grid>
-               );
-            })}
-         </Grid>
+      <Container maxWidth="false" className={classes.containerStyle}>
+         <Container maxWidth="lg" id="industries">
+            <Typography variant="h3" className={classes.titleStyle}>
+               The businesses we help to grow
+            </Typography>
+            <Grid
+               container
+               className={classes.gridContainerStyle}
+               justify="center"
+            >
+               {industriesData.map((data) => {
+                  return (
+                     <Grid item className={classes.gridStyle} xs>
+                        <Card className={classes.root}>
+                           <CardMedia
+                              className={classes.media}
+                              image={data.photo}
+                              title={data.industry}
+                           />
+                           <CardContent>
+                              <Typography className={classes.pos}>
+                                 {data.industry}
+                              </Typography>
+                           </CardContent>
+                        </Card>
+                     </Grid>
+                  );
+               })}
+            </Grid>
+         </Container>
       </Container>
    );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
    root: {
       backgroundColor: '#F2F2F2',
       boxShadow: '0 0 8px #730217',
@@ -67,9 +69,13 @@ const useStyles = makeStyles({
       margin: '0 auto',
       paddingTop: '80px',
       paddingBottom: '20px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '30px',
+      },
    },
    gridStyle: {
       minWidth: 350,
+      maxWidth: 350,
    },
    gridContainerStyle: {
       padding: '20px',
@@ -80,7 +86,7 @@ const useStyles = makeStyles({
       margin: 0,
       color: '#730217',
    },
-});
+}));
 
 const industriesData = [
    {

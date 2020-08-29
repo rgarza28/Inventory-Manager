@@ -24,60 +24,62 @@ export default function Footer() {
             component="footer"
             className={classes.footer}
          >
-            <Grid container spacing={4} justify="space-evenly">
-               <Grid item xs={6} sm={3}>
-                  <Link>
-                     <Avatar
-                        className={classes.avatarStyle}
-                        src={logo}
-                        justify="center"
-                     ></Avatar>
-                  </Link>
+            <Container width="lg">
+               <Grid container spacing={4} justify="space-evenly">
+                  <Grid item xs={6} sm={3}>
+                     <Link>
+                        <Avatar
+                           className={classes.avatarStyle}
+                           src={logo}
+                           justify="center"
+                        ></Avatar>
+                     </Link>
+                  </Grid>
+                  <Grid item xs={6} sm={3}>
+                     <Link underline="none">
+                        <Typography href="" className={classes.menuStyle}>
+                           features
+                        </Typography>
+                     </Link>
+                     <Link underline="none">
+                        <Typography href="" className={classes.menuStyle}>
+                           customers
+                        </Typography>
+                     </Link>
+                     <Link underline="none">
+                        <Typography href="" className={classes.menuStyle}>
+                           pricing
+                        </Typography>
+                     </Link>
+                     <Link underline="none">
+                        <Typography href="" className={classes.menuStyle}>
+                           team
+                        </Typography>
+                     </Link>
+                     <Link underline="none">
+                        <Typography href="" className={classes.menuStyle}>
+                           contact us
+                        </Typography>
+                     </Link>
+                  </Grid>
+                  <Grid item xs={6} sm={3} alignItems="center" mb={0}>
+                     <Link href="https://www.facebook.com/" target="_blank">
+                        <FacebookIcon className={classes.iconStyle} />
+                     </Link>
+                     <Link href="https://www.instagram.com/" target="_blank">
+                        <InstagramIcon className={classes.iconStyle} />
+                     </Link>
+                     <Link href="https://www.linkedin.com/" target="_blank">
+                        <LinkedInIcon className={classes.iconStyle} />
+                     </Link>
+                     <Link href="https://www.youtube.com/" target="_blank">
+                        <YouTubeIcon className={classes.iconStyle} />
+                     </Link>
+                  </Grid>
                </Grid>
-               <Grid item xs={6} sm={3}>
-                  <Link underline="none">
-                     <Typography href="" className={classes.menuStyle}>
-                        features
-                     </Typography>
-                  </Link>
-                  <Link underline="none">
-                     <Typography href="" className={classes.menuStyle}>
-                        customers
-                     </Typography>
-                  </Link>
-                  <Link underline="none">
-                     <Typography href="" className={classes.menuStyle}>
-                        pricing
-                     </Typography>
-                  </Link>
-                  <Link underline="none">
-                     <Typography href="" className={classes.menuStyle}>
-                        team
-                     </Typography>
-                  </Link>
-                  <Link underline="none">
-                     <Typography href="" className={classes.menuStyle}>
-                        contact us
-                     </Typography>
-                  </Link>
-               </Grid>
-               <Grid item xs={6} sm={3} alignItems="center" mb={0}>
-                  <Link href="https://www.facebook.com/" target="_blank">
-                     <FacebookIcon className={classes.iconStyle} />
-                  </Link>
-                  <Link href="https://www.instagram.com/" target="_blank">
-                     <InstagramIcon className={classes.iconStyle} />
-                  </Link>
-                  <Link href="https://www.linkedin.com/" target="_blank">
-                     <LinkedInIcon className={classes.iconStyle} />
-                  </Link>
-                  <Link href="https://www.youtube.com/" target="_blank">
-                     <YouTubeIcon className={classes.iconStyle} />
-                  </Link>
-               </Grid>
-            </Grid>
+            </Container>
          </Container>
-         <Container maxWidth="false" className={classes.copyrightStyle}>
+         <Container maxWidth="false" style={{ padding: '0' }}>
             <Box>
                <Copyright />
             </Box>
@@ -125,9 +127,6 @@ const useStyles = makeStyles((theme) => ({
       margin: '12px auto',
       display: 'block',
    },
-   copyrightStyle: {
-      padding: '0',
-   },
 }));
 
 function Copyright() {
@@ -137,14 +136,14 @@ function Copyright() {
          color="textSecondary"
          align="center"
          style={{
-            color: '#F2F2F2',
             backgroundColor: '#5D8AA6',
-            padding: '30px',
+            color: '#F2F2F2',
+            padding: '20px',
          }}
       >
          {'Copyright © '}
          <Link color="inherit" href="https://material-ui.com/">
-            Your Website
+            Chief System
          </Link>{' '}
          {new Date().getFullYear()}
          {'.'}

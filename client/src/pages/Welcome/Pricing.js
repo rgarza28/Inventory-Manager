@@ -18,100 +18,102 @@ function Pricing() {
    return (
       <React.Fragment>
          {/* Hero unit */}
-         <Container
-            maxWidth="false"
-            component="main"
-            className={classes.heroContent}
-            id="pricing"
-         >
-            <Typography variant="h3" className={classes.titleStyle}>
-               Find a plan that’s right for your business
-            </Typography>
-            {/* End hero unit */}
-            <Container maxWidth="md">
-               <Grid container spacing={5} alignItems="flex-end">
-                  {tiers.map((tier) => (
-                     // Enterprise card is full width at sm breakpoint
-                     <Grid
-                        item
-                        key={tier.title}
-                        xs={12}
-                        sm={tier.title === 'Enterprise' ? 12 : 6}
-                        md={4}
-                     >
-                        <Card className={classes.cardStyle}>
-                           <CardHeader
-                              title={tier.title}
-                              // subheader={tier.subheader}
-                              titleTypographyProps={{ align: 'center' }}
-                              subheaderTypographyProps={{ align: 'center' }}
-                              action={
-                                 tier.title === 'Pro' ? <StarIcon /> : null
-                              }
-                              className={classes.cardHeader}
-                           />
-                           <CardContent>
-                              <div className={classes.cardPricing}>
-                                 <Typography variant="h3" color="#730217">
-                                    ${tier.price}
-                                 </Typography>
-                                 <Typography variant="h6" color="#BF0426">
-                                    /mo
-                                 </Typography>
-                              </div>
-                              <ul>
-                                 {tier.description.map((line) => (
-                                    <Typography
-                                       component="li"
-                                       variant="subtitle1"
-                                       align="center"
-                                       key={line}
-                                    >
-                                       {line}
+         <Container maxWidth="false" className={classes.heroContent}>
+            <Container maxWidth="lg" component="main" id="pricing">
+               <Typography variant="h3" className={classes.titleStyle}>
+                  Find a plan that’s right for your business
+               </Typography>
+               {/* End hero unit */}
+               <Container maxWidth="md">
+                  <Grid
+                     container
+                     spacing={5}
+                     alignItems="flex-end"
+                     justify="center"
+                  >
+                     {tiers.map((tier) => (
+                        // Enterprise card is full width at sm breakpoint
+                        <Grid
+                           item
+                           key={tier.title}
+                           xs={12}
+                           sm={tier.title === 'Enterprise' ? 12 : 6}
+                           md={4}
+                        >
+                           <Card className={classes.cardStyle}>
+                              <CardHeader
+                                 title={tier.title}
+                                 // subheader={tier.subheader}
+                                 titleTypographyProps={{ align: 'center' }}
+                                 subheaderTypographyProps={{ align: 'center' }}
+                                 action={
+                                    tier.title === 'Pro' ? <StarIcon /> : null
+                                 }
+                                 className={classes.cardHeader}
+                              />
+                              <CardContent>
+                                 <div className={classes.cardPricing}>
+                                    <Typography variant="h3" color="#730217">
+                                       ${tier.price}
                                     </Typography>
-                                 ))}
-                              </ul>
-                           </CardContent>
+                                    <Typography variant="h6" color="#BF0426">
+                                       /mo
+                                    </Typography>
+                                 </div>
+                                 <ul>
+                                    {tier.description.map((line) => (
+                                       <Typography
+                                          component="li"
+                                          variant="subtitle1"
+                                          align="center"
+                                          key={line}
+                                       >
+                                          {line}
+                                       </Typography>
+                                    ))}
+                                 </ul>
+                              </CardContent>
 
-                           <CardActions>
-                              <Button
-                                 fullWidth
-                                 variant={tier.buttonVariant}
-                                 className={classes.containedButtonStyle}
-                              >
-                                 {tier.buttonText}
-                              </Button>
-                           </CardActions>
-                        </Card>
-                     </Grid>
-                  ))}
-                  <ul style={{ width: '100%', marginTop: '10px' }}>
-                     <Typography
-                        variant="body1"
-                        className={classes.disclaimerStyle}
-                     >
-                        <li>All plans include Unlimited:</li>
-                     </Typography>
-                     <Typography
-                        variant="body2"
-                        className={classes.disclaimerStyle}
-                     >
-                        <li>
-                           Products, Customers, Suppliers, Transactions,
-                           Integrations, Warehouses and Currencies
-                        </li>
-                        <li>Sandbox Environment</li>
-                        <li>Premium Support</li>
-                     </Typography>
-                  </ul>
-               </Grid>
+                              <CardActions>
+                                 <Button
+                                    fullWidth
+                                    variant={tier.buttonVariant}
+                                    className={classes.containedButtonStyle}
+                                 >
+                                    {tier.buttonText}
+                                 </Button>
+                              </CardActions>
+                           </Card>
+                        </Grid>
+                     ))}
+                     <ul style={{ width: '100%', marginTop: '10px' }}>
+                        <Typography
+                           variant="body1"
+                           className={classes.disclaimerStyle}
+                        >
+                           <li>All plans include Unlimited:</li>
+                        </Typography>
+                        <Typography
+                           variant="body2"
+                           className={classes.disclaimerStyle}
+                        >
+                           <li>
+                              Products, Customers, Suppliers, Transactions,
+                              Integrations, Warehouses and Currencies
+                           </li>
+                           <li>Sandbox Environment</li>
+                           <li>Premium Support</li>
+                        </Typography>
+                     </ul>
+                  </Grid>
+               </Container>
+               <Button
+                  className={classes.containedButtonStyle}
+                  style={{ backgroundColor: '#BF0426', marginTop: '50px' }}
+               >
+                  Start your free trial now
+               </Button>
             </Container>
-            <Button
-               className={classes.containedButtonStyle}
-               style={{ backgroundColor: '#BF0426', marginTop: '50px' }}
-            >
-               Start your free trial now
-            </Button>
          </Container>
       </React.Fragment>
    );
@@ -133,6 +135,9 @@ const useStyles = makeStyles((theme) => ({
       margin: '0 auto',
       paddingTop: '80px',
       paddingBottom: '50px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '30px',
+      },
    },
    heroContent: {
       backgroundColor: '#D7D7D9',

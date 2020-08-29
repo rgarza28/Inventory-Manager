@@ -46,7 +46,7 @@ function Features() {
    );
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
    root: {
       backgroundColor: '#F2F2F2',
       boxShadow: 'none',
@@ -60,6 +60,9 @@ const useStyles = makeStyles({
       margin: '0 auto',
       paddingTop: '80px',
       paddingBottom: '20px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '30px',
+      },
    },
    gridStyle: {
       minWidth: 250,
@@ -76,7 +79,7 @@ const useStyles = makeStyles({
       margin: '20px 0',
       color: '#5D8AA6',
    },
-});
+}));
 
 const featuresData = [
    {
