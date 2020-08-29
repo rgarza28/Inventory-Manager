@@ -6,6 +6,7 @@ import {
    Typography,
    IconButton,
    Grid,
+   Link,
 } from '@material-ui/core';
 import PlayArrow from '@material-ui/icons/PlayArrow';
 import TedTalkBackground from './images/fakeTedTalk.png';
@@ -32,9 +33,11 @@ function Tedtalk() {
             <Typography variant="body1" className={classes.speakerStyle}>
                Pat Kelly, Thought Leader
             </Typography>
-            <Button className={classes.containedButtonStyle}>
-               Start your free trial now
-            </Button>
+            <Link to="/signup" style={{ textDecoration: 'none' }}>
+               <Button className={classes.containedButtonStyle}>
+                  Start your free trial now
+               </Button>
+            </Link>
          </Grid>
       </CardMedia>
    );
