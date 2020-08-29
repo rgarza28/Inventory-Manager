@@ -2,10 +2,13 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Button, CardMedia } from '@material-ui/core';
 import background from './images/globe.jpg';
-import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 function Jumbotron() {
    const classes = useStyles();
+   const history = useHistory();
+
+   const signup = () => history.push("/signup");
 
    return (
       <CardMedia
@@ -23,11 +26,10 @@ function Jumbotron() {
             multi-currency, and advanced reporting are just a few of Chief
             System’s powerful features which make this possible
          </Typography>
-         <Link to="/signup" style={{ textDecoration: 'none' }}>
+            <Button className={classes.containedButtonStyle} onClick={signup}>
             <Button className={classes.containedButtonStyle}>
                Start your free trial now
             </Button>
-         </Link>
       </CardMedia>
    );
 }

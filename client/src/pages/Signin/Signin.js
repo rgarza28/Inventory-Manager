@@ -14,9 +14,13 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo-vertical.png';
+import { useHistory } from "react-router-dom";
 
 function SignInSide() {
    const classes = useStyles();
+   const history = useHistory();
+
+   const welcome = () => history.push("/");
 
    return (
       <Grid container component="main" className={classes.root}>
@@ -33,15 +37,13 @@ function SignInSide() {
             className={classes.containerStyle}
          >
             <div className={classes.paper}>
-               <Link to="/">
-                  <Button className={classes.buttonLogoStyle}>
+                  <Button className={classes.buttonLogoStyle} onClick={welcome}>
                      <Avatar
                         className={classes.avatarStyle}
                         src={logo}
                         justify="center"
                      ></Avatar>
                   </Button>
-               </Link>
                <Typography
                   component="h1"
                   variant="h5"
