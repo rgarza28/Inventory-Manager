@@ -1,69 +1,25 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
+import {
+   Avatar,
+   Button,
+   CssBaseline,
+   TextField,
+   FormControlLabel,
+   Checkbox,
+   Link,
+   Paper,
+   Box,
+   Grid,
+   Typography,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import logo from './logo-vertical.png';
 
-function Copyright() {
-   return (
-      <Typography variant="body2" color="textSecondary" align="center">
-         {'Copyright © '}
-         <Link color="inherit" href="https://material-ui.com/">
-            Your Website
-         </Link>{' '}
-         {new Date().getFullYear()}
-         {'.'}
-      </Typography>
-   );
-}
-
-const useStyles = makeStyles((theme) => ({
-   root: {
-      height: '100vh',
-   },
-   image: {
-      backgroundImage: 'url(https://source.unsplash.com/random)',
-      backgroundRepeat: 'no-repeat',
-      backgroundColor:
-         theme.palette.type === 'light'
-            ? theme.palette.grey[50]
-            : theme.palette.grey[900],
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-   },
-   paper: {
-      margin: theme.spacing(8, 4),
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-   },
-   avatar: {
-      margin: theme.spacing(1),
-      backgroundColor: theme.palette.secondary.main,
-   },
-   form: {
-      width: '100%', // Fix IE 11 issue.
-      marginTop: theme.spacing(1),
-   },
-   submit: {
-      margin: theme.spacing(3, 0, 2),
-   },
-}));
-
-export default function SignInSide() {
+function SignInSide() {
    const classes = useStyles();
 
    return (
-      <Grid container component="main" className={classes.root} id="signin">
+      <Grid container component="main" className={classes.root}>
          <CssBaseline />
          <Grid item xs={false} sm={4} md={7} className={classes.image} />
          <Grid
@@ -74,12 +30,23 @@ export default function SignInSide() {
             component={Paper}
             elevation={6}
             square
+            className={classes.containerStyle}
          >
             <div className={classes.paper}>
-               <Avatar className={classes.avatar}>
-                  <LockOutlinedIcon />
-               </Avatar>
-               <Typography component="h1" variant="h5">
+               <Link to="/">
+                  <Button className={classes.buttonLogoStyle}>
+                     <Avatar
+                        className={classes.avatarStyle}
+                        src={logo}
+                        justify="center"
+                     ></Avatar>
+                  </Button>
+               </Link>
+               <Typography
+                  component="h1"
+                  variant="h5"
+                  style={{ color: '#730217' }}
+               >
                   Sign in
                </Typography>
                <form className={classes.form} noValidate>
@@ -113,19 +80,26 @@ export default function SignInSide() {
                      type="submit"
                      fullWidth
                      variant="contained"
-                     color="primary"
-                     className={classes.submit}
+                     className={classes.containedButtonStyle}
                   >
                      Sign In
                   </Button>
                   <Grid container>
                      <Grid item xs>
-                        <Link href="#" variant="body2">
+                        <Link
+                           href="#"
+                           variant="body2"
+                           style={{ color: '#730217' }}
+                        >
                            Forgot password?
                         </Link>
                      </Grid>
-                     <Grid item>
-                        <Link href="#" variant="body2">
+                     <Grid item xs>
+                        <Link
+                           href="#"
+                           variant="body2"
+                           style={{ color: '#730217' }}
+                        >
                            {"Don't have an account? Sign Up"}
                         </Link>
                      </Grid>
@@ -139,3 +113,75 @@ export default function SignInSide() {
       </Grid>
    );
 }
+
+const useStyles = makeStyles((theme) => ({
+   root: {
+      height: '100vh',
+   },
+   image: {
+      backgroundImage:
+         'url(https://source.unsplash.com/featured/?logistic,brewery,retailer,manufacturer)',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor:
+         theme.palette.type === 'light'
+            ? theme.palette.grey[50]
+            : theme.palette.grey[900],
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+   },
+   containerStyle: {
+      backgroundColor: '#F2F2F2',
+   },
+   paper: {
+      margin: theme.spacing(8, 4),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+   },
+   buttonLogoStyle: {
+      '&:hover': {
+         backgroundColor: 'transparent',
+      },
+   },
+   avatarStyle: {
+      backgroundColor: '#F2F2F2',
+      width: '120px',
+      height: 'auto',
+      margin: '0 auto 20px',
+      padding: '20px',
+      borderRadius: '5px',
+   },
+   form: {
+      width: '100%', // Fix IE 11 issue.
+      marginTop: theme.spacing(1),
+   },
+   containedButtonStyle: {
+      fontSize: '20px',
+      fontWeight: '400',
+      textTransform: 'lowercase',
+      backgroundColor: '#730217',
+      color: '#F2F2F2',
+      padding: '10px 20px',
+      margin: '10px 0',
+      boxShadow: 'none',
+      '&:hover': {
+         backgroundColor: '#BF0426',
+         boxShadow: 'none',
+      },
+   },
+}));
+
+function Copyright() {
+   return (
+      <Typography variant="body2" color="textSecondary" align="center">
+         {'Copyright © '}
+         <Link color="inherit" href="https://material-ui.com/">
+            Chief System
+         </Link>{' '}
+         {new Date().getFullYear()}
+         {'.'}
+      </Typography>
+   );
+}
+
+export default SignInSide;

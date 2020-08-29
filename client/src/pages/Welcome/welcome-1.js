@@ -11,17 +11,23 @@ import Tedtalk from './Tedtalk';
 
 function Welcome() {
    return (
-      <header>
-         <Navbar />
-         <Jumbotron />
-         <Features />
-         <Tedtalk />
-         <Industries />
-         <Customers />
-         <Pricing />
-         <Team />
-         <Footer />
-      </header>
+      <div>
+         <header>
+            <Navbar />
+         </header>
+         <main>
+            <Jumbotron />
+            <Features />
+            <Tedtalk />
+            <Industries />
+            <Customers />
+            <Pricing />
+            <Team />
+         </main>
+         <footer>
+            <Footer />
+         </footer>
+      </div>
    );
 }
 export default Welcome;
