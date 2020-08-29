@@ -52,7 +52,7 @@ function Navbar() {
                      team
                   </Button>
                   <Box className={classes.boxStyle}>
-                     <Link to="/signin">
+                     <Link to="/signin" style={{ textDecoration: 'none' }}>
                         <Button
                            className={classes.textButtonStyle}
                            variant="text"
