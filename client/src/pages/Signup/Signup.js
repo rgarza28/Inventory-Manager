@@ -14,24 +14,26 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo-vertical.png';
+import { useHistory } from "react-router-dom";
 
 function SignUp() {
    const classes = useStyles();
+   const history = useHistory();
+
+   const welcome = () => history.push("/");
 
    return (
       <Container maxWidth="false" className={classes.containerStyle}>
          <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-               <Link to="/">
-                  <Button className={classes.buttonLogoStyle}>
+                  <Button className={classes.buttonLogoStyle} onClick={welcome}>
                      <Avatar
                         className={classes.avatarStyle}
                         src={logo}
                         justify="center"
                      ></Avatar>
                   </Button>
-               </Link>
                <Typography
                   component="h1"
                   variant="h5"

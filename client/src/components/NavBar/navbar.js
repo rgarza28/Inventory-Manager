@@ -9,10 +9,15 @@ import {
    Container,
 } from '@material-ui/core';
 import logo from './logo-horizontal.png';
-import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 function Navbar() {
    const classes = useStyles();
+   const history = useHistory();
+
+   const welcome = () => history.push("/");
+   const signin = () => history.push("/signin");
+   const signup = () => history.push("/signup");
 
    return (
       <Container className={classes.root} maxWidth="false">
@@ -28,9 +33,9 @@ function Navbar() {
                      flexDirection: 'row',
                   }}
                >
-                  <Link to="/">
-                     <Avatar className={classes.avatarStyle} src={logo} />
-                  </Link>
+                  <Button onClick={welcome}>
+                     <Avatar className={classes.avatarStyle} src={logo} /> {/* Verify route to home */}
+                  </Button>
                </Grid>
                <Grid className={classes.menuStyle} item xs={12} md={9}>
                   <Button className={classes.textButtonStyle} href="#features">
@@ -52,22 +57,20 @@ function Navbar() {
                      team
                   </Button>
                   <Box className={classes.boxStyle}>
-                     <Link to="/signin">
                         <Button
                            className={classes.textButtonStyle}
                            variant="text"
+                           onClick={signin}
                         >
                            sign in
-                        </Button>
-                     </Link>
-                     <Link to="/signup">
+                        </Button>                    
                         <Button
                            className={classes.containedButtonStyle}
                            variant="contained"
+                           onClick={signup}
                         >
                            get started
                         </Button>
-                     </Link>
                   </Box>
                </Grid>
             </Grid>
