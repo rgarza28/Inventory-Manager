@@ -27,6 +27,7 @@ function Jumbotron() {
             System’s powerful features which make this possible
          </Typography>
             <Button className={classes.containedButtonStyle} onClick={signup}>
+            <Button className={classes.containedButtonStyle}>
                Start your free trial now
             </Button>
       </CardMedia>
