@@ -12,7 +12,7 @@ import Link from "@material-ui/core/Link";
 import Navigator from "./Navigator";
 // import Content from "./Content";
 import Header from "./Header";
-import EnhancedTable from "../../components/Table";
+import MaterialTableDemo from "../../components/Table";
 
 function Copyright() {
   return (
@@ -194,7 +194,8 @@ function Paperbase(props) {
         <div className={classes.app}>
           <Header onDrawerToggle={handleDrawerToggle} />
           <main className={classes.main}>
-            <EnhancedTable />
+            {/* <EnhancedTable /> */}
+            <MaterialTableDemo />
           </main>
           <footer className={classes.footer}>
             <Copyright />
