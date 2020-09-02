@@ -40,6 +40,7 @@ function Pricing() {
                      xs={12}
                      sm={tier.title === 'Enterprise' ? 12 : 6}
                      md={4}
+                     className={classes.gridStyle}
                   >
                      <Card className={classes.cardStyle}>
                         <CardHeader
@@ -141,10 +142,17 @@ const useStyles = makeStyles((theme) => ({
          fontSize: '30px',
       },
    },
+   gridContainerStyle: {
+      width: '90%',
+      margin: '0 auto',
+   },
+   gridStyle: {
+      minWidth: 350,
+      maxWidth: 350,
+   },
    cardStyle: {
       backgroundColor: '#F2F2F2',
       boxShadow: '0 0 10px #D97904',
-      border: 'red solid 2px',
    },
    cardHeader: {
       backgroundColor: '#D97904',

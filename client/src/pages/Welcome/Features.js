@@ -77,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
    gridContainerStyle: {
       width: '90%',
       margin: '0 auto',
-      border: 'red solid 2px',
    },
    gridStyle: {
       minWidth: 350,
