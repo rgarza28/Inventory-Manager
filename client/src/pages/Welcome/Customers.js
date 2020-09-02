@@ -15,7 +15,7 @@ function Customers() {
 
    return (
       <Container
-         maxWidth="lg"
+         maxWidth="false"
          className={classes.containerStyle}
          id="customers"
       >
@@ -79,15 +79,16 @@ function Customers() {
 
 const useStyles = makeStyles((theme) => ({
    root: {
-      marginTop: 'none',
-      marginBottom: 30,
+      flexgrow: 1,
+      margin: '20px',
    },
    media: {
       height: 140,
    },
    containerStyle: {
-      paddingBottom: '50px',
+      width: '100vw',
       minHeight: '100vh',
+      paddingBottom: '50px',
    },
    titleStyle: {
       color: '#184059',
@@ -109,18 +110,19 @@ const useStyles = makeStyles((theme) => ({
          fontSize: '16px',
       },
    },
+   gridContainerStyle: {
+      width: '90%',
+      margin: '0 auto',
+      padding: '20px',
+      border: 'red solid 2px',
+   },
    cardContentStyle: {
       padding: '30px',
    },
-   gridContainerStyle: {
-      width: '100%',
-      margin: '0 auto',
-      padding: '20px',
-   },
    gridStyle: {
-      minWidth: 250,
-      maxWidth: 250,
-      margin: '0 20px',
+      minWidth: 350,
+      maxWidth: 350,
+      border: 'orange solid 2px',
    },
    avatarStyle: {
       width: '180px',

@@ -13,11 +13,19 @@ function Features() {
    const classes = useStyles();
 
    return (
-      <Container maxWidth="lg" className={classes.containerStyle} id="features">
+      <Container
+         maxWidth="false"
+         className={classes.containerStyle}
+         id="features"
+      >
          <Typography variant="h3" className={classes.titleStyle}>
             Every inventory management feature your business needs
          </Typography>
-         <Grid container className={classes.gridContainerStyle}>
+         <Grid
+            container
+            className={classes.gridContainerStyle}
+            justify="center"
+         >
             {featuresData.map((data) => {
                return (
                   <Grid item className={classes.gridStyle} xs>
@@ -52,23 +60,28 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: 'none',
    },
    containerStyle: {
+      width: '100vw',
       minHeight: '100vh',
+      paddingBottom: '50px',
    },
    titleStyle: {
       color: '#184059',
       width: '80%',
       margin: '0 auto',
       paddingTop: '80px',
-      paddingBottom: '20px',
+      paddingBottom: '50px',
       [theme.breakpoints.down('xs')]: {
          fontSize: '30px',
       },
    },
-   gridStyle: {
-      minWidth: 250,
-   },
    gridContainerStyle: {
-      padding: '20px',
+      width: '90%',
+      margin: '0 auto',
+      border: 'red solid 2px',
+   },
+   gridStyle: {
+      minWidth: 350,
+      maxWidth: 350,
    },
    iconStyle: {
       color: '#184059',

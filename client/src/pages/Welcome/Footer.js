@@ -7,6 +7,7 @@ import {
    Link,
    Box,
    Avatar,
+   Button,
 } from '@material-ui/core';
 import logo from './images/logo-vertical.png';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -25,8 +26,8 @@ export default function Footer() {
             className={classes.footer}
          >
             <Container width="lg">
-               <Grid container spacing={4} justify="space-evenly">
-                  <Grid item xs={6} sm={3}>
+               <Grid container spacing={4} className={classes.containerStyle}>
+                  <Grid item xs={12} sm={4}>
                      <Link>
                         <Avatar
                            className={classes.avatarStyle}
@@ -35,46 +36,36 @@ export default function Footer() {
                         ></Avatar>
                      </Link>
                   </Grid>
-                  <Grid item xs={6} sm={3}>
-                     <Link underline="none">
-                        <Typography href="" className={classes.menuStyle}>
-                           features
-                        </Typography>
-                     </Link>
-                     <Link underline="none">
-                        <Typography href="" className={classes.menuStyle}>
-                           customers
-                        </Typography>
-                     </Link>
-                     <Link underline="none">
-                        <Typography href="" className={classes.menuStyle}>
-                           pricing
-                        </Typography>
-                     </Link>
-                     <Link underline="none">
-                        <Typography href="" className={classes.menuStyle}>
-                           team
-                        </Typography>
-                     </Link>
-                     <Link underline="none">
-                        <Typography href="" className={classes.menuStyle}>
-                           contact us
-                        </Typography>
-                     </Link>
+                  <Grid item xs={12} sm={4}>
+                     <Button href="#features" className={classes.menuStyle}>
+                        features
+                     </Button>
+                     <Button href="#industries" className={classes.menuStyle}>
+                        industries
+                     </Button>
+                     <Button href="#customers" className={classes.menuStyle}>
+                        customers
+                     </Button>
+                     <Button href="#pricing" className={classes.menuStyle}>
+                        pricing
+                     </Button>
+                     <Button href="#team" className={classes.menuStyle}>
+                        team
+                     </Button>
                   </Grid>
-                  <Grid item xs={6} sm={3} alignItems="center" mb={0}>
-                     <Link href="https://www.facebook.com/" target="_blank">
+                  <Grid item xs={12} sm={4} mb={0}>
+                     <Button href="https://www.facebook.com/" target="_blank">
                         <FacebookIcon className={classes.iconStyle} />
-                     </Link>
-                     <Link href="https://www.instagram.com/" target="_blank">
+                     </Button>
+                     <Button href="https://www.instagram.com/" target="_blank">
                         <InstagramIcon className={classes.iconStyle} />
-                     </Link>
-                     <Link href="https://www.linkedin.com/" target="_blank">
+                     </Button>
+                     <Button href="https://www.linkedin.com/" target="_blank">
                         <LinkedInIcon className={classes.iconStyle} />
-                     </Link>
-                     <Link href="https://www.youtube.com/" target="_blank">
+                     </Button>
+                     <Button href="https://www.youtube.com/" target="_blank">
                         <YouTubeIcon className={classes.iconStyle} />
-                     </Link>
+                     </Button>
                   </Grid>
                </Grid>
             </Container>
@@ -100,14 +91,22 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#184059',
       color: '#F2F2F2',
    },
+   containerStyle: {
+      justifyContent: 'space-around',
+   },
    menuStyle: {
       fontSize: '15px',
       color: '#F2F2F2',
+      width: '100%',
       padding: '5px 0',
       textTransform: 'lowercase',
       '&:hover': {
          backgroundColor: 'transparent',
          color: '#D7D7D9',
+      },
+      [theme.breakpoints.down('xs')]: {
+         width: 'auto',
+         padding: '20px',
       },
    },
    avatarStyle: {
@@ -124,8 +123,12 @@ const useStyles = makeStyles((theme) => ({
    iconStyle: {
       fontSize: '30px',
       color: '#F2F2F2',
-      margin: '12px auto',
-      display: 'block',
+      margin: '0 auto',
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
+         width: 'auto',
+         padding: '20px',
+      },
    },
 }));
 

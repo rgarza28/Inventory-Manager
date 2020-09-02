@@ -8,6 +8,7 @@ import {
    Container,
    Grid,
    Avatar,
+   Button,
 } from '@material-ui/core';
 
 function Team() {
@@ -19,10 +20,6 @@ function Team() {
             <Typography variant="h3" className={classes.titleStyle}>
                Meet the brains behind Chief System
             </Typography>
-            <Typography
-               variant="h6"
-               className={classes.subtitleStyle}
-            ></Typography>
             <Grid
                container
                className={classes.gridContainerStyle}
