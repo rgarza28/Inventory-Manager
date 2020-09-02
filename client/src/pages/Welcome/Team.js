@@ -16,50 +16,48 @@ function Team() {
 
    return (
       <Container maxWidth="false" className={classes.containerStyle} id="team">
-         <Container maxWidth="lg">
-            <Typography variant="h3" className={classes.titleStyle}>
-               Meet the brains behind Chief System
-            </Typography>
-            <Grid
-               container
-               className={classes.gridContainerStyle}
-               justify="center"
-            >
-               {teamData.map((data) => {
-                  return (
-                     <Grid item className={classes.gridStyle} xs>
-                        <Card className={classes.root}>
-                           <CardActionArea>
-                              <CardContent className={classes.cardContentStyle}>
-                                 <Typography
-                                    className={classes.nameStyle}
-                                    variant="body2"
-                                 >
-                                    {data.name}
-                                 </Typography>
-                                 <Typography variant="body2">
-                                    {data.specialty}
-                                 </Typography>
-                                 <Typography
-                                    variant="h5"
-                                    component="h2"
-                                    className={classes.descriptionStyle}
-                                 >
-                                    {data.description}
-                                 </Typography>
-                              </CardContent>
-                              <Avatar
-                                 className={classes.avatarStyle}
-                                 src={data.photo}
-                                 alt={data.name}
-                              />
-                           </CardActionArea>
-                        </Card>
-                     </Grid>
-                  );
-               })}
-            </Grid>
-         </Container>
+         <Typography variant="h3" className={classes.titleStyle}>
+            Meet the brains behind Chief System
+         </Typography>
+         <Grid
+            container
+            className={classes.gridContainerStyle}
+            justify="center"
+         >
+            {teamData.map((data) => {
+               return (
+                  <Grid item className={classes.gridStyle} xs>
+                     <Card className={classes.root}>
+                        <CardActionArea>
+                           <CardContent className={classes.cardContentStyle}>
+                              <Typography
+                                 className={classes.nameStyle}
+                                 variant="body2"
+                              >
+                                 {data.name}
+                              </Typography>
+                              <Typography variant="body2">
+                                 {data.specialty}
+                              </Typography>
+                              <Typography
+                                 variant="h5"
+                                 component="h2"
+                                 className={classes.descriptionStyle}
+                              >
+                                 {data.description}
+                              </Typography>
+                           </CardContent>
+                           <Avatar
+                              className={classes.avatarStyle}
+                              src={data.photo}
+                              alt={data.name}
+                           />
+                        </CardActionArea>
+                     </Card>
+                  </Grid>
+               );
+            })}
+         </Grid>
       </Container>
    );
 }
@@ -85,25 +83,25 @@ const useStyles = makeStyles((theme) => ({
    },
    titleStyle: {
       color: '#F2F2F2',
-      width: '90%',
+      width: '80%',
       margin: '0 auto',
       paddingTop: '80px',
-      paddingBottom: '20px',
+      paddingBottom: '50px',
       [theme.breakpoints.down('xs')]: {
          fontSize: '30px',
+         border: 'red solid 2px',
       },
    },
    cardContentStyle: {
       padding: '30px',
    },
    gridContainerStyle: {
-      width: '100%',
+      width: '90%',
       margin: '0 auto',
-      padding: '20px',
    },
    gridStyle: {
-      minWidth: 250,
-      maxWidth: 250,
+      minWidth: 350,
+      maxWidth: 350,
       margin: '0 20px',
    },
    descriptionStyle: {
