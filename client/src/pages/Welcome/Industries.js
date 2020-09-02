@@ -13,36 +13,38 @@ function Industries() {
    const classes = useStyles();
 
    return (
-      <Container maxWidth="false" className={classes.containerStyle}>
-         <Container maxWidth="lg" id="industries">
-            <Typography variant="h3" className={classes.titleStyle}>
-               The businesses we help to grow
-            </Typography>
-            <Grid
-               container
-               className={classes.gridContainerStyle}
-               justify="center"
-            >
-               {industriesData.map((data) => {
-                  return (
-                     <Grid item className={classes.gridStyle} xs>
-                        <Card className={classes.root}>
-                           <CardMedia
-                              className={classes.media}
-                              image={data.photo}
-                              title={data.industry}
-                           />
-                           <CardContent>
-                              <Typography className={classes.pos}>
-                                 {data.industry}
-                              </Typography>
-                           </CardContent>
-                        </Card>
-                     </Grid>
-                  );
-               })}
-            </Grid>
-         </Container>
+      <Container
+         maxWidth="false"
+         className={classes.containerStyle}
+         id="industries"
+      >
+         <Typography variant="h3" className={classes.titleStyle}>
+            The businesses we help grow
+         </Typography>
+         <Grid
+            container
+            className={classes.gridContainerStyle}
+            justify="center"
+         >
+            {industriesData.map((data) => {
+               return (
+                  <Grid item className={classes.gridStyle} xs>
+                     <Card className={classes.root}>
+                        <CardMedia
+                           className={classes.media}
+                           image={data.photo}
+                           title={data.industry}
+                        />
+                        <CardContent>
+                           <Typography className={classes.pos}>
+                              {data.industry}
+                           </Typography>
+                        </CardContent>
+                     </Card>
+                  </Grid>
+               );
+            })}
+         </Grid>
       </Container>
    );
 }
@@ -60,25 +62,27 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#D97904',
       width: '100vw',
       minHeight: '100vh',
-      margin: '0 auto',
       paddingBottom: '50px',
    },
    titleStyle: {
       color: '#F2F2F2',
-      width: '90%',
+      width: '80%',
       margin: '0 auto',
       paddingTop: '80px',
-      paddingBottom: '20px',
+      paddingBottom: '50px',
       [theme.breakpoints.down('xs')]: {
          fontSize: '30px',
       },
    },
+   gridContainerStyle: {
+      width: '90%',
+      margin: '0 auto',
+      border: 'red solid 2px',
+   },
    gridStyle: {
       minWidth: 350,
       maxWidth: 350,
-   },
-   gridContainerStyle: {
-      padding: '20px',
+      border: 'orange solid 2px',
    },
    pos: {
       textTransform: 'uppercase',
