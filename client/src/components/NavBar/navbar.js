@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
    AppBar,
@@ -10,8 +10,11 @@ import {
 } from '@material-ui/core';
 import logo from './logo-horizontal.png';
 import { useHistory } from "react-router-dom";
+import UserContext from '../../context/UserContext';
 
 function Navbar() {
+   const { userData, setUserData } = useContext(UserContext);
+
    const classes = useStyles();
    const history = useHistory();
 
@@ -57,6 +60,15 @@ function Navbar() {
                      team
                   </Button>
                   <Box className={classes.boxStyle}>
+                     {userData.user ? (
+                        <Button
+                        className={classes.containedButtonStyle}
+                        variant="text"
+                     >
+                        Logout
+                     </Button>
+                     ) : (
+                        <>
                         <Button
                            className={classes.textButtonStyle}
                            variant="text"
@@ -71,6 +83,8 @@ function Navbar() {
                         >
                            get started
                         </Button>
+                        </>
+                     )}
                   </Box>
                </Grid>
             </Grid>

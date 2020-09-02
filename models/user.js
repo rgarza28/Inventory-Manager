@@ -16,7 +16,7 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    data: {
+    data: [{
         sku: { 
             type: Number
         },
@@ -38,7 +38,7 @@ const UserSchema = new Schema({
         retail: { 
             type: Number 
         }
-    },
+    }],
     date: {
         type: Date,
         default:Date.now
