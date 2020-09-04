@@ -17,7 +17,17 @@ function Jumbotron() {
          id="welcome"
       >
          <Typography variant="h3" className={classes.jumbotronTitleStyle}>
-            Grow your business with smarter inventory management
+            <span style={{ color: '#D97904', fontWeight: '400' }}>C</span>
+            reating a{' '}
+            <span style={{ color: '#D97904', fontWeight: '400' }}>H</span>
+            ealthy{' '}
+            <span style={{ color: '#D97904', fontWeight: '400' }}>I</span>
+            nventory{' '}
+            <span style={{ color: '#D97904', fontWeight: '400' }}>E</span>
+            nvironment{' '}
+            <span style={{ color: '#D97904', fontWeight: '400' }}>F</span>
+            oundation
+            {/* Grow your business with smarter inventory management */}
          </Typography>
          <Typography variant="h6" className={classes.h6Style}>
             Chief System’s inventory management software is perfectly suited to

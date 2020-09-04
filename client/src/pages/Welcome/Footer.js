@@ -14,6 +14,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 export default function Footer() {
    const classes = useStyles();
@@ -70,10 +71,37 @@ export default function Footer() {
                </Grid>
             </Container>
          </Container>
-         <Container maxWidth="false" style={{ padding: '0' }}>
-            <Box>
-               <Copyright />
-            </Box>
+         <Container
+            maxWidth="false"
+            style={{
+               backgroundColor: '#5D8AA6',
+               color: '#F2F2F2',
+               padding: '20px',
+            }}
+         >
+            <Grid container justify="center" direction="column">
+               <Grid
+                  item
+                  style={{
+                     paddingBottom: '10px',
+                  }}
+               >
+                  <Typography
+                     style={{
+                        display: 'flex',
+                        justifyItems: 'center',
+                     }}
+                  >
+                     Made with <FavoriteIcon style={{ color: 'red' }} /> by SMU
+                     Bootcamp Students
+                  </Typography>
+               </Grid>
+               <Grid item>
+                  <Box>
+                     <Copyright />
+                  </Box>
+               </Grid>
+            </Grid>
          </Container>
       </div>
    );
@@ -134,16 +162,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Copyright() {
    return (
-      <Typography
-         variant="body2"
-         color="textSecondary"
-         align="center"
-         style={{
-            backgroundColor: '#5D8AA6',
-            color: '#F2F2F2',
-            padding: '20px',
-         }}
-      >
+      <Typography>
          {'Copyright © '}
          <Link color="inherit" href="https://material-ui.com/">
             Chief System
