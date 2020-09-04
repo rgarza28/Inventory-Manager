@@ -7,9 +7,10 @@ import {
    Avatar,
    Grid,
    Container,
+   Link,
 } from '@material-ui/core';
 import logo from './logo-horizontal.png';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 
 function Navbar() {
@@ -18,26 +19,19 @@ function Navbar() {
    const classes = useStyles();
    const history = useHistory();
 
-   const welcome = () => history.push("/");
-   const signin = () => history.push("/signin");
-   const signup = () => history.push("/signup");
+   const welcome = () => history.push('/');
+   const signin = () => history.push('/signin');
+   const signup = () => history.push('/signup');
 
    return (
       <Container className={classes.root} maxWidth="false">
          <AppBar className={classes.appBarStyle}>
             <Grid container alignItems="center" style={{ padding: '0 10px' }}>
-               <Grid
-                  item
-                  xs={12}
-                  md={3}
-                  style={{
-                     justifyContent: 'center',
-                     display: 'flex',
-                     flexDirection: 'row',
-                  }}
-               >
+               <Grid item className={classes.gridStyle} xs={12} md={3}>
                   <Button onClick={welcome}>
-                     <Avatar className={classes.avatarStyle} src={logo} /> {/* Verify route to home */}
+                     <Link href="/">
+                        <Avatar className={classes.avatarStyle} src={logo} />
+                     </Link>
                   </Button>
                </Grid>
                <Grid className={classes.menuStyle} item xs={12} md={9}>
@@ -62,27 +56,27 @@ function Navbar() {
                   <Box className={classes.boxStyle}>
                      {userData.user ? (
                         <Button
-                        className={classes.containedButtonStyle}
-                        variant="text"
-                     >
-                        Logout
-                     </Button>
+                           className={classes.containedButtonStyle}
+                           variant="text"
+                        >
+                           Logout
+                        </Button>
                      ) : (
                         <>
-                        <Button
-                           className={classes.textButtonStyle}
-                           variant="text"
-                           onClick={signin}
-                        >
-                           sign in
-                        </Button>                    
-                        <Button
-                           className={classes.containedButtonStyle}
-                           variant="contained"
-                           onClick={signup}
-                        >
-                           get started
-                        </Button>
+                           <Button
+                              className={classes.textButtonStyle}
+                              variant="text"
+                              onClick={signin}
+                           >
+                              sign in
+                           </Button>
+                           <Button
+                              className={classes.containedButtonStyle}
+                              variant="contained"
+                              onClick={signup}
+                           >
+                              get started
+                           </Button>
                         </>
                      )}
                   </Box>
@@ -102,6 +96,14 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('sm')]: {
          position: 'relative',
          borderBottom: 'none',
+      },
+   },
+   gridStyle: {
+      justifyContent: 'flex-start',
+      display: 'flex',
+      flexDirection: 'row',
+      [theme.breakpoints.down('sm')]: {
+         justifyContent: 'center',
       },
    },
    avatarStyle: {
