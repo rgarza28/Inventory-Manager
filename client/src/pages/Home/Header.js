@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
@@ -17,9 +17,18 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import logo from './img/logo-white.png';
+import UserContext from '../../context/UserContext';
 
 function Header(props) {
    const { classes, onDrawerToggle } = props;
+   const { setUserData } = useContext(UserContext);
+   const logout = () => {
+      setUserData({
+         token: undefined,
+         user: undefined,
+      });
+      localStorage.setItem('auth-token', '');
+   };
 
    return (
       <React.Fragment>
@@ -53,8 +62,9 @@ function Header(props) {
                         className={classes.buttonStyle}
                         href="/"
                         variant="outlined"
+                        onClick={logout}
                      >
-                        HOME
+                        sign out
                      </Button>
                   </Grid>
                   <Grid item>

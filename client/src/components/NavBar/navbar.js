@@ -65,7 +65,7 @@ function Navbar() {
                            variant="text"
                            onClick={logout}
                         >
-                           Logout
+                           sign out
                         </Button>
                      ) : (
                         <>
