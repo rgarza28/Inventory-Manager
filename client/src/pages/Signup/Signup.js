@@ -51,13 +51,13 @@ function SignUp() {
          <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-                  <Button className={classes.buttonLogoStyle} onClick={welcome}>
-                     <Avatar
-                        className={classes.avatarStyle}
-                        src={logo}
-                        justify="center"
-                     ></Avatar>
-                  </Button>
+               <Button className={classes.buttonLogoStyle} onClick={welcome}>
+                  <Avatar
+                     className={classes.avatarStyle}
+                     src={logo}
+                     justify="center"
+                  ></Avatar>
+               </Button>
                <Typography
                   component="h1"
                   variant="h5"
@@ -78,6 +78,7 @@ function SignUp() {
                            label="Username"
                            autoFocus
                            onChange={(e) => setName(e.target.value)}
+                           color="secondary"
                         />
                      </Grid>
                      <Grid item xs={12}>
@@ -90,6 +91,7 @@ function SignUp() {
                            name="email"
                            autoComplete="email"
                            onChange={(e) => setEmail(e.target.value)}
+                           color="secondary"
                         />
                      </Grid>
                      <Grid item xs={12}>
@@ -103,6 +105,7 @@ function SignUp() {
                            id="password"
                            autoComplete="current-password"
                            onChange={(e) => setPassword(e.target.value)}
+                           color="secondary"
                         />
                      </Grid>
                      <Grid item xs={12}>
@@ -110,7 +113,7 @@ function SignUp() {
                            control={
                               <Checkbox
                                  value="allowExtraEmails"
-                                 color="primary"
+                                 color="secondary"
                               />
                            }
                            label="I want to receive inspiration, marketing promotions and updates via email."
@@ -130,7 +133,7 @@ function SignUp() {
                   <Grid container justify="flex-end">
                      <Grid item xs>
                         <Link
-                           href="#"
+                           href="/signin"
                            variant="body2"
                            style={{ color: '#730217' }}
                         >

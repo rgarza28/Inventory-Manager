@@ -114,7 +114,6 @@ const useStyles = makeStyles((theme) => ({
       width: '90%',
       margin: '0 auto',
       padding: '20px',
-      border: 'red solid 2px',
    },
    cardContentStyle: {
       padding: '30px',
@@ -122,7 +121,6 @@ const useStyles = makeStyles((theme) => ({
    gridStyle: {
       minWidth: 350,
       maxWidth: 350,
-      border: 'orange solid 2px',
    },
    avatarStyle: {
       width: '180px',

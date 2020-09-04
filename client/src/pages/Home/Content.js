@@ -13,29 +13,6 @@ import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
-const styles = (theme) => ({
-   paper: {
-      maxWidth: 936,
-      margin: 'auto',
-      overflow: 'hidden',
-   },
-   searchBar: {
-      borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
-   },
-   searchInput: {
-      fontSize: theme.typography.fontSize,
-   },
-   block: {
-      display: 'block',
-   },
-   addUser: {
-      marginRight: theme.spacing(1),
-   },
-   contentWrapper: {
-      margin: '40px 16px',
-   },
-});
-
 function Content(props) {
    const { classes } = props;
 
@@ -94,5 +71,28 @@ function Content(props) {
 Content.propTypes = {
    classes: PropTypes.object.isRequired,
 };
+
+const styles = (theme) => ({
+   paper: {
+      maxWidth: 936,
+      margin: 'auto',
+      overflow: 'hidden',
+   },
+   searchBar: {
+      borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+   },
+   searchInput: {
+      fontSize: theme.typography.fontSize,
+   },
+   block: {
+      display: 'block',
+   },
+   addUser: {
+      marginRight: theme.spacing(1),
+   },
+   contentWrapper: {
+      margin: '40px 16px',
+   },
+});
 
 export default withStyles(styles)(Content);
