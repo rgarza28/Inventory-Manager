@@ -21,6 +21,13 @@ function Navbar() {
    const welcome = () => history.push("/");
    const signin = () => history.push("/signin");
    const signup = () => history.push("/signup");
+   const logout = () => {
+     setUserData({
+      token: undefined,
+      user: undefined
+     });
+      localStorage.setItem("auth-token", "");
+   }
 
    return (
       <Container className={classes.root} maxWidth="false">
@@ -64,6 +71,7 @@ function Navbar() {
                         <Button
                         className={classes.containedButtonStyle}
                         variant="text"
+                        onClick={logout}
                      >
                         Logout
                      </Button>
