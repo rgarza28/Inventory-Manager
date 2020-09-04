@@ -79,8 +79,9 @@ function Navbar() {
                            <Button
                               className={classes.containedButtonStyle}
                               variant="text"
+                              onClick={signup}
                            >
-                              Logout
+                              get started
                            </Button>
                         </>
                      )}

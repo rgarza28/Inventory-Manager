@@ -4,8 +4,6 @@ import {
    Button,
    CssBaseline,
    TextField,
-   FormControlLabel,
-   Checkbox,
    Link,
    Grid,
    Box,
@@ -17,11 +15,13 @@ import logo from './logo-vertical.png';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
+import ErrorNotice from '../../components/ErrorNotice';
 
 function SignUp() {
    const [ email, setEmail ] = useState();
    const [ password, setPassword ] = useState();
    const [ name, setName ] = useState();
+   const [error, setError] = useState();
 
    const { setUserData } = useContext(UserContext);
 
@@ -29,6 +29,7 @@ function SignUp() {
 
    const submit = async (e) => {
      e.preventDefault();
+     try{
      const newUser = { name, email, password };
      await axios.post("http://localhost:5000/api/users", newUser); 
      const loginRes = await axios.post("http://localhost:5000/api/auth", {
@@ -40,11 +41,15 @@ function SignUp() {
      });
      localStorage.setItem("auth-token", loginRes.data.token);
      history.push("/home"); 
+   } catch(err){
+      err.response.data.msg && setError(err.response.data.msg);
+   }
    }
 
    const classes = useStyles();
 
    const welcome = () => history.push("/");
+   const signin = () => history.push('/signin');
 
    return (
       <Container maxWidth="false" className={classes.containerStyle}>
@@ -108,17 +113,6 @@ function SignUp() {
                            color="secondary"
                         />
                      </Grid>
-                     <Grid item xs={12}>
-                        <FormControlLabel
-                           control={
-                              <Checkbox
-                                 value="allowExtraEmails"
-                                 color="secondary"
-                              />
-                           }
-                           label="I want to receive inspiration, marketing promotions and updates via email."
-                        />
-                     </Grid>
                   </Grid>
                   <Button
                      type="submit"
@@ -130,12 +124,15 @@ function SignUp() {
                   >
                      Sign Up
                   </Button>
+                  {error && <ErrorNotice message={error} clearError={() => setError(undefined)}
+                  />}
                   <Grid container justify="flex-end">
                      <Grid item xs>
                         <Link
                            href="/signin"
                            variant="body2"
                            style={{ color: '#730217' }}
+                           onClick={signin}
                         >
                            Already have an account? Sign in
                         </Link>

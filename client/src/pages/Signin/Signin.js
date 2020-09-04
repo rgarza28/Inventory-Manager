@@ -4,8 +4,6 @@ import {
    Button,
    CssBaseline,
    TextField,
-   FormControlLabel,
-   Checkbox,
    Link,
    Paper,
    Box,
@@ -17,16 +15,19 @@ import logo from './logo-vertical.png';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
+import ErrorNotice from '../../components/ErrorNotice';
 
 function SignInSide() {
 
    const [ email, setEmail ] = useState();
    const [ password, setPassword ] = useState();
+   const [error, setError] = useState();
 
    const { setUserData } = useContext(UserContext);
 
    const submit = async (e) => {
       e.preventDefault();
+      try {
       const loginUser = { email, password }; 
       const loginRes = await axios.post("http://localhost:5000/api/auth", loginUser);
       setUserData({
@@ -34,13 +35,17 @@ function SignInSide() {
          name: loginRes.data.name
       });
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/home"); 
+      history.push("/home");
+      } catch(err) {
+         err.response.data.msg && setError(err.response.data.msg);
+      } 
     }
 
    const classes = useStyles();
    const history = useHistory();
 
    const welcome = () => history.push('/');
+   const signup = () => history.push('/signup');
 
    return (
       <Grid container component="main" className={classes.root}>
@@ -98,10 +103,6 @@ function SignInSide() {
                      onChange={(e) => setPassword(e.target.value)}
                      color="secondary"
                   />
-                  <FormControlLabel
-                     control={<Checkbox value="remember" color="secondary" />}
-                     label="Remember me"
-                  />
                   <Button
                      type="submit"
                      fullWidth
@@ -111,6 +112,8 @@ function SignInSide() {
                   >
                      Sign In
                   </Button>
+                  {error && <ErrorNotice message={error} clearError={() => setError(undefined)}
+                  />}
                   <Grid container>
                      <Grid item xs>
                         <Link
@@ -126,6 +129,7 @@ function SignInSide() {
                            href="/signup"
                            variant="body2"
                            style={{ color: '#730217' }}
+                           onClick={signup}
                         >
                            {"Don't have an account? Sign Up"}
                         </Link>
