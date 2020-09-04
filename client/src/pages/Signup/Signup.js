@@ -14,26 +14,26 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo-vertical.png';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 function SignUp() {
    const classes = useStyles();
    const history = useHistory();
 
-   const welcome = () => history.push("/");
+   const welcome = () => history.push('/');
 
    return (
       <Container maxWidth="false" className={classes.containerStyle}>
          <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-                  <Button className={classes.buttonLogoStyle} onClick={welcome}>
-                     <Avatar
-                        className={classes.avatarStyle}
-                        src={logo}
-                        justify="center"
-                     ></Avatar>
-                  </Button>
+               <Button className={classes.buttonLogoStyle} onClick={welcome}>
+                  <Avatar
+                     className={classes.avatarStyle}
+                     src={logo}
+                     justify="center"
+                  ></Avatar>
+               </Button>
                <Typography
                   component="h1"
                   variant="h5"
@@ -53,6 +53,7 @@ function SignUp() {
                            id="userName"
                            label="Username"
                            autoFocus
+                           color="secondary"
                         />
                      </Grid>
                      <Grid item xs={12}>
@@ -64,6 +65,7 @@ function SignUp() {
                            label="Email Address"
                            name="email"
                            autoComplete="email"
+                           color="secondary"
                         />
                      </Grid>
                      <Grid item xs={12}>
@@ -76,6 +78,7 @@ function SignUp() {
                            type="password"
                            id="password"
                            autoComplete="current-password"
+                           color="secondary"
                         />
                      </Grid>
                      <Grid item xs={12}>
@@ -83,7 +86,7 @@ function SignUp() {
                            control={
                               <Checkbox
                                  value="allowExtraEmails"
-                                 color="primary"
+                                 color="secondary"
                               />
                            }
                            label="I want to receive inspiration, marketing promotions and updates via email."
@@ -102,7 +105,7 @@ function SignUp() {
                   <Grid container justify="flex-end">
                      <Grid item xs>
                         <Link
-                           href="#"
+                           href="/signin"
                            variant="body2"
                            style={{ color: '#730217' }}
                         >

@@ -14,13 +14,13 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo-vertical.png';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 function SignInSide() {
    const classes = useStyles();
    const history = useHistory();
 
-   const welcome = () => history.push("/");
+   const welcome = () => history.push('/');
 
    return (
       <Grid container component="main" className={classes.root}>
@@ -37,13 +37,13 @@ function SignInSide() {
             className={classes.containerStyle}
          >
             <div className={classes.paper}>
-                  <Button className={classes.buttonLogoStyle} onClick={welcome}>
-                     <Avatar
-                        className={classes.avatarStyle}
-                        src={logo}
-                        justify="center"
-                     ></Avatar>
-                  </Button>
+               <Button className={classes.buttonLogoStyle} onClick={welcome}>
+                  <Avatar
+                     className={classes.avatarStyle}
+                     src={logo}
+                     justify="center"
+                  ></Avatar>
+               </Button>
                <Typography
                   component="h1"
                   variant="h5"
@@ -51,7 +51,7 @@ function SignInSide() {
                >
                   Sign in
                </Typography>
-               <form className={classes.form} noValidate>
+               <form className={classes.formStyle} noValidate>
                   <TextField
                      variant="outlined"
                      margin="normal"
@@ -62,6 +62,7 @@ function SignInSide() {
                      name="email"
                      autoComplete="email"
                      autoFocus
+                     color="secondary"
                   />
                   <TextField
                      variant="outlined"
@@ -73,9 +74,10 @@ function SignInSide() {
                      type="password"
                      id="password"
                      autoComplete="current-password"
+                     color="secondary"
                   />
                   <FormControlLabel
-                     control={<Checkbox value="remember" color="primary" />}
+                     control={<Checkbox value="remember" color="secondary" />}
                      label="Remember me"
                   />
                   <Button
@@ -98,7 +100,7 @@ function SignInSide() {
                      </Grid>
                      <Grid item xs>
                         <Link
-                           href="#"
+                           href="/signup"
                            variant="body2"
                            style={{ color: '#730217' }}
                         >
@@ -153,7 +155,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '20px',
       borderRadius: '5px',
    },
-   form: {
+   formStyle: {
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
    },
