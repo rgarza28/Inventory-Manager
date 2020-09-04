@@ -15,13 +15,18 @@ import UserContext from '../../context/UserContext';
 
 function Navbar() {
    const { userData, setUserData } = useContext(UserContext);
-
    const classes = useStyles();
    const history = useHistory();
-
-   const welcome = () => history.push('/');
-   const signin = () => history.push('/signin');
-   const signup = () => history.push('/signup');
+   const welcome = () => history.push("/");
+   const signin = () => history.push("/signin");
+   const signup = () => history.push("/signup");
+   const logout = () => {
+     setUserData({
+      token: undefined,
+      user: undefined
+     });
+      localStorage.setItem("auth-token", "");
+   }
 
    return (
       <Container className={classes.root} maxWidth="false">
@@ -55,6 +60,22 @@ function Navbar() {
                   </Button>
                   <Box className={classes.boxStyle}>
                      {userData.user ? (
+                        <Button
+                        className={classes.containedButtonStyle}
+                        variant="text"
+                        onClick={logout}
+                     >
+                        Logout
+                     </Button>
+                     ) : (
+                        <>
+                        <Button
+                           className={classes.textButtonStyle}
+                           variant="text"
+                           onClick={signin}
+                        >
+                           sign in
+                        </Button>                    
                         <Button
                            className={classes.containedButtonStyle}
                            variant="text"

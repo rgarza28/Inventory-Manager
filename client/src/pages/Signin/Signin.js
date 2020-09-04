@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import {
    Avatar,
    Button,
@@ -15,8 +15,28 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo-vertical.png';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import UserContext from '../../context/UserContext';
 
 function SignInSide() {
+
+   const [ email, setEmail ] = useState();
+   const [ password, setPassword ] = useState();
+
+   const { setUserData } = useContext(UserContext);
+
+   const submit = async (e) => {
+      e.preventDefault();
+      const loginUser = { email, password }; 
+      const loginRes = await axios.post("http://localhost:5000/api/auth", loginUser);
+      setUserData({
+         token: loginRes.data.token,
+         name: loginRes.data.name
+      });
+      localStorage.setItem("auth-token", loginRes.data.token);
+      history.push("/home"); 
+    }
+
    const classes = useStyles();
    const history = useHistory();
 
@@ -62,6 +82,7 @@ function SignInSide() {
                      name="email"
                      autoComplete="email"
                      autoFocus
+                     onChange={(e) => setEmail(e.target.value)}
                      color="secondary"
                   />
                   <TextField
@@ -74,6 +95,7 @@ function SignInSide() {
                      type="password"
                      id="password"
                      autoComplete="current-password"
+                     onChange={(e) => setPassword(e.target.value)}
                      color="secondary"
                   />
                   <FormControlLabel
@@ -85,6 +107,7 @@ function SignInSide() {
                      fullWidth
                      variant="contained"
                      className={classes.containedButtonStyle}
+                     onClick={submit}
                   >
                      Sign In
                   </Button>

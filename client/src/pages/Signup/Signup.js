@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import {
    Avatar,
    Button,
@@ -15,12 +15,36 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo-vertical.png';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import UserContext from '../../context/UserContext';
 
 function SignUp() {
-   const classes = useStyles();
+   const [ email, setEmail ] = useState();
+   const [ password, setPassword ] = useState();
+   const [ name, setName ] = useState();
+
+   const { setUserData } = useContext(UserContext);
+
    const history = useHistory();
 
-   const welcome = () => history.push('/');
+   const submit = async (e) => {
+     e.preventDefault();
+     const newUser = { name, email, password };
+     await axios.post("http://localhost:5000/api/users", newUser); 
+     const loginRes = await axios.post("http://localhost:5000/api/auth", {
+      email, password
+     });
+     setUserData({
+        token: loginRes.data.token,
+        name: loginRes.data.name
+     });
+     localStorage.setItem("auth-token", loginRes.data.token);
+     history.push("/home"); 
+   }
+
+   const classes = useStyles();
+
+   const welcome = () => history.push("/");
 
    return (
       <Container maxWidth="false" className={classes.containerStyle}>
@@ -53,6 +77,7 @@ function SignUp() {
                            id="userName"
                            label="Username"
                            autoFocus
+                           onChange={(e) => setName(e.target.value)}
                            color="secondary"
                         />
                      </Grid>
@@ -65,6 +90,7 @@ function SignUp() {
                            label="Email Address"
                            name="email"
                            autoComplete="email"
+                           onChange={(e) => setEmail(e.target.value)}
                            color="secondary"
                         />
                      </Grid>
@@ -78,6 +104,7 @@ function SignUp() {
                            type="password"
                            id="password"
                            autoComplete="current-password"
+                           onChange={(e) => setPassword(e.target.value)}
                            color="secondary"
                         />
                      </Grid>
@@ -99,6 +126,7 @@ function SignUp() {
                      variant="contained"
                      color="primary"
                      className={classes.containedButtonStyle}
+                     onClick={submit}
                   >
                      Sign Up
                   </Button>
