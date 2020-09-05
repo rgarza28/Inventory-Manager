@@ -17,10 +17,8 @@ function ErrorNotice(props) {
 
 const useStyles = makeStyles((theme) => ({
    errorStyle: {
-      backgroundColor: '#BF0426',
       padding: '0 20px',
       color: 'red',
-      border: 'red solid 2px',
    },
 }));
 
