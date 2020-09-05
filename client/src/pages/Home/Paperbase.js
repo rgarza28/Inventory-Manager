@@ -13,6 +13,7 @@ import Navigator from "./Navigator";
 // import Content from "./Content";
 import Header from "./Header";
 import MaterialTableDemo from "../../components/Table";
+import Upload from "../../components/Upload";
 
 function Copyright() {
   return (
@@ -196,6 +197,7 @@ function Paperbase(props) {
           <main className={classes.main}>
             {/* <EnhancedTable /> */}
             <MaterialTableDemo />
+            <Upload />
           </main>
           <footer className={classes.footer}>
             <Copyright />
