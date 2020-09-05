@@ -79,28 +79,26 @@ export default function Footer() {
                padding: '20px',
             }}
          >
-            <Grid container justify="center" direction="column">
-               <Grid
-                  item
-                  style={{
-                     paddingBottom: '10px',
-                  }}
-               >
-                  <Typography
-                     style={{
-                        display: 'flex',
-                        justifyItems: 'center',
-                     }}
-                  >
-                     Made with <FavoriteIcon style={{ color: 'red' }} /> by SMU
-                     Bootcamp Students
+            <Grid
+               style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+               }}
+            >
+               <Box>
+                  <Typography className={classes.madeWithLove}>
+                     Made with{' '}
+                     <FavoriteIcon
+                        style={{
+                           color: 'red',
+                           padding: '0 8px',
+                           fontSize: '18px',
+                        }}
+                     />
+                     by SMU Bootcamp Students
                   </Typography>
-               </Grid>
-               <Grid item>
-                  <Box>
-                     <Copyright />
-                  </Box>
-               </Grid>
+                  <Copyright />
+               </Box>
             </Grid>
          </Container>
       </div>
@@ -108,7 +106,6 @@ export default function Footer() {
 }
 
 const useStyles = makeStyles((theme) => ({
-   root: {},
    footer: {
       paddingTop: theme.spacing(3),
       paddingBottom: theme.spacing(3),
@@ -158,11 +155,21 @@ const useStyles = makeStyles((theme) => ({
          padding: '20px',
       },
    },
+   madeWithLove: {
+      fontSize: '12px',
+      letterSpacing: '1px',
+      display: 'flex',
+      paddingBottom: '10px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '12px',
+         letterSpacing: '1px',
+      },
+   },
 }));
 
 function Copyright() {
    return (
-      <Typography>
+      <Typography style={{ fontSize: '12px', letterSpacing: '1px' }}>
          {'Copyright © '}
          <Link color="inherit" href="https://material-ui.com/">
             Chief System

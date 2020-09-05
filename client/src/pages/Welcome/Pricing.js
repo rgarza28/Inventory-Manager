@@ -152,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
    },
    cardStyle: {
       backgroundColor: '#F2F2F2',
-      boxShadow: '0 0 10px #D97904',
+      boxShadow: '0 3px 6px #730217',
    },
    cardHeader: {
       backgroundColor: '#D97904',

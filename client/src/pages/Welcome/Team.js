@@ -8,7 +8,6 @@ import {
    Container,
    Grid,
    Avatar,
-   Button,
 } from '@material-ui/core';
 
 function Team() {
@@ -28,7 +27,7 @@ function Team() {
                return (
                   <Grid item className={classes.gridStyle} xs>
                      <Card className={classes.root}>
-                        <CardActionArea>
+                        <CardActionArea href={data.link} target="_blank">
                            <CardContent className={classes.cardContentStyle}>
                               <Typography
                                  className={classes.nameStyle}
@@ -89,7 +88,6 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: '50px',
       [theme.breakpoints.down('xs')]: {
          fontSize: '30px',
-         border: 'red solid 2px',
       },
    },
    cardContentStyle: {
@@ -132,24 +130,28 @@ const teamData = [
       name: 'Gerardo Gandara',
       specialty: 'Backend Developer',
       description: '“A bug that accidentally generates money”',
+      link: 'https://github.com/ggandara8',
    },
    {
       photo: '/img/customers/Sidney_Lucas.jpg',
       name: 'Robert Garza',
       specialty: 'Backend Developer',
       description: "“I don't know how it works, but it works”",
+      link: 'https://github.com/rgarza28',
    },
    {
-      photo: '/img/customers/Sidney_Lucas.jpg',
+      photo: '/img/team/Erick.jpg',
       name: 'Erick Adams',
       specialty: 'Frontend Developer',
       description: '“All business in the front, party in the back end”',
+      link: 'https://github.com/n2deep56',
    },
    {
-      photo: '/img/customers/Sidney_Lucas.jpg',
+      photo: '/img/team/Jeuel.png',
       name: 'Jeuel Viveros',
       specialty: 'Frontend Developer',
       description: '“What? It works in my computer”',
+      link: 'https://github.com/vjeuel',
    },
 ];
 
