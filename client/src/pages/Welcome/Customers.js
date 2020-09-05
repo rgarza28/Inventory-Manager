@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
    Card,
-   CardActionArea,
    CardContent,
    Typography,
    Container,
@@ -36,38 +35,36 @@ function Customers() {
                return (
                   <Grid item className={classes.gridStyle} xs>
                      <Card className={classes.root}>
-                        <CardActionArea>
-                           <Avatar
-                              className={classes.avatarStyle}
-                              src={data.photo}
-                              alt={data.name}
-                           />
-                           <CardContent className={classes.cardContentStyle}>
-                              <Typography
-                                 gutterBottom
-                                 variant="h5"
-                                 component="h2"
-                                 className={classes.reviewStyle}
-                              >
-                                 {data.review}
-                              </Typography>
-                              <Typography
-                                 className={classes.descriptionStyle}
-                                 variant="body2"
-                              >
-                                 {data.description}
-                              </Typography>
-                              <Typography
-                                 className={classes.nameStyle}
-                                 variant="body2"
-                              >
-                                 {data.name}
-                              </Typography>
-                              <Typography variant="body2">
-                                 {data.company}
-                              </Typography>
-                           </CardContent>
-                        </CardActionArea>
+                        <Avatar
+                           className={classes.avatarStyle}
+                           src={data.photo}
+                           alt={data.name}
+                        />
+                        <CardContent className={classes.cardContentStyle}>
+                           <Typography
+                              gutterBottom
+                              variant="h5"
+                              component="h2"
+                              className={classes.reviewStyle}
+                           >
+                              {data.review}
+                           </Typography>
+                           <Typography
+                              className={classes.descriptionStyle}
+                              variant="body2"
+                           >
+                              {data.description}
+                           </Typography>
+                           <Typography
+                              className={classes.nameStyle}
+                              variant="body2"
+                           >
+                              {data.name}
+                           </Typography>
+                           <Typography variant="body2">
+                              {data.company}
+                           </Typography>
+                        </CardContent>
                      </Card>
                   </Grid>
                );

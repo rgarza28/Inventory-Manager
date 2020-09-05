@@ -16,11 +16,11 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import ErrorNotice from '../../components/ErrorNotice';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function SignInSide() {
-
-   const [ email, setEmail ] = useState();
-   const [ password, setPassword ] = useState();
+   const [email, setEmail] = useState();
+   const [password, setPassword] = useState();
    const [error, setError] = useState();
 
    const { setUserData } = useContext(UserContext);
@@ -28,18 +28,21 @@ function SignInSide() {
    const submit = async (e) => {
       e.preventDefault();
       try {
-      const loginUser = { email, password }; 
-      const loginRes = await axios.post("http://localhost:5000/api/auth", loginUser);
-      setUserData({
-         token: loginRes.data.token,
-         name: loginRes.data.name
-      });
-      localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/home");
-      } catch(err) {
+         const loginUser = { email, password };
+         const loginRes = await axios.post(
+            'http://localhost:5000/api/auth',
+            loginUser
+         );
+         setUserData({
+            token: loginRes.data.token,
+            name: loginRes.data.name,
+         });
+         localStorage.setItem('auth-token', loginRes.data.token);
+         history.push('/home');
+      } catch (err) {
          err.response.data.msg && setError(err.response.data.msg);
-      } 
-    }
+      }
+   };
 
    const classes = useStyles();
    const history = useHistory();
@@ -112,8 +115,12 @@ function SignInSide() {
                   >
                      Sign In
                   </Button>
-                  {error && <ErrorNotice message={error} clearError={() => setError(undefined)}
-                  />}
+                  {error && (
+                     <ErrorNotice
+                        message={error}
+                        clearError={() => setError(undefined)}
+                     />
+                  )}
                   <Grid container>
                      <Grid item xs>
                         <Link
@@ -135,9 +142,30 @@ function SignInSide() {
                         </Link>
                      </Grid>
                   </Grid>
-                  <Box mt={5}>
-                     <Copyright />
-                  </Box>
+                  <Grid
+                     style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                     }}
+                  >
+                     <Box mt={5}>
+                        <Typography
+                           className={classes.madeWithLove}
+                           color="textSecondary"
+                        >
+                           Made with{' '}
+                           <FavoriteIcon
+                              style={{
+                                 color: 'red',
+                                 padding: '0 8px',
+                                 fontSize: '35px',
+                              }}
+                           />
+                           by SMU Bootcamp Students
+                        </Typography>
+                        <Copyright />
+                     </Box>
+                  </Grid>
                </form>
             </div>
          </Grid>
@@ -200,11 +228,26 @@ const useStyles = makeStyles((theme) => ({
          boxShadow: 'none',
       },
    },
+   madeWithLove: {
+      fontSize: '12px',
+      letterSpacing: '1px',
+      display: 'flex',
+      alignItems: 'center',
+      paddingBottom: '10px',
+      [theme.breakpoints.down('xs')]: {
+         fontSize: '12px',
+         letterSpacing: '1px',
+      },
+   },
 }));
 
 function Copyright() {
    return (
-      <Typography variant="body2" color="textSecondary" align="center">
+      <Typography
+         style={{ fontSize: '12px', letterSpacing: '1px' }}
+         color="textSecondary"
+         align="center"
+      >
          {'Copyright © '}
          <Link color="inherit" href="https://material-ui.com/">
             Chief System
