@@ -5,9 +5,9 @@ function UploadImage() {
   const [loading, setLoading] = useState(false);
 
   const uploadImage = async (e) => {
-    const files = e.targe.files;
+    const files = e.target.files;
     const data = new FormData();
-    data.append("file", file[0]);
+    data.append("file", files[0]);
     data.append("upload_preset", "darwin");
     setLoading(true);
     const res = await fetch(
@@ -20,7 +20,7 @@ function UploadImage() {
 
     const file = await res.json();
 
-    setImage(file.secur_url);
+    setImage(file.secure_url);
 
     setLoading(false);
   };
@@ -34,6 +34,11 @@ function UploadImage() {
         placeholder="Upload an image"
         onChange={uploadImage}
       />
+      {loading ? (
+        <h3>Loading. . .</h3>
+      ) : (
+        <img src={image} style={{ width: "300px" }} />
+      )}
     </div>
   );
 }
