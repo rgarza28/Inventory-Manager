@@ -16,29 +16,6 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    data: [{
-        sku: { 
-            type: Number
-        },
-        productName: { 
-            type: String
-        },
-        description: { 
-            type: String 
-        },
-        currentInventory: { 
-            type: Number
-        },
-        minInventory: { 
-            type: Number 
-        },
-        cost: { 
-            type: Number 
-        },
-        retail: { 
-            type: Number 
-        }
-    }],
     date: {
         type: Date,
         default:Date.now

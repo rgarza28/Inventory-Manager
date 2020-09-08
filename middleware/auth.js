@@ -13,8 +13,13 @@ function auth(req, res, next) {
    try {
       //verify token
       const decoded = jwt.verify(token, process.env.MONGODB_URI);
+      if (!decoded){
+         return res
+         .status(401)
+         .json({ msg: 'No token, authorization denied' });
+      }
       //add user from payload
-      req.user = decoded;
+      req.user = decoded.id;
       next();
    } catch (e) {
       res.status(400).json({ msg: 'Token is not valid' });

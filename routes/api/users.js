@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 
 router.post('/', (req, res) => {
-   const { name, email, password, data } = req.body;
+   const { name, email, password } = req.body;
 
    //Validation
    if (!name || !email || !password) {
@@ -21,8 +21,7 @@ router.post('/', (req, res) => {
       const newUser = new User({
          name,
          email,
-         password,
-         data,
+         password
       });
 
       // Create salt and hash
@@ -42,8 +41,7 @@ router.post('/', (req, res) => {
                         user: {
                            id: user.id,
                            name: user.name,
-                           email: user.email,
-                           data: user.data,
+                           email: user.email
                         },
                      });
                   }
