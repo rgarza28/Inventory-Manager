@@ -83,6 +83,7 @@ const styles = (theme) => ({
    },
    searchInput: {
       fontSize: theme.typography.fontSize,
+      border: 'red solid 2px',
    },
    block: {
       display: 'block',

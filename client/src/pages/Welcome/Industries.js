@@ -60,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
    },
    containerStyle: {
       backgroundColor: '#D97904',
-      width: '100vw',
       minHeight: '100vh',
       paddingBottom: '50px',
    },

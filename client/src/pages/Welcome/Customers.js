@@ -83,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
       height: 140,
    },
    containerStyle: {
-      width: '100vw',
       minHeight: '100vh',
       paddingBottom: '50px',
    },
