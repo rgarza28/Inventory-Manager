@@ -14,7 +14,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import logo from './img/logo-white.png';
+import logoLevel from './img/logo-level.png';
 import UserContext from '../../context/UserContext';
 
 function Header(props) {
@@ -39,7 +39,7 @@ function Header(props) {
                <Grid container spacing={1} alignItems="center">
                   <Grid>
                      <Button href="/">
-                        <Avatar className={classes.logoStyle} src={logo} />
+                        <Avatar className={classes.logoStyle} src={logoLevel} />
                      </Button>
                   </Grid>
                   <Hidden smUp>
@@ -54,7 +54,11 @@ function Header(props) {
                         </IconButton>
                      </Grid>
                   </Hidden>
-                  <Grid item xs />
+                  <Grid item xs>
+                     <Typography color="inherit" variant="h5" component="h1">
+                        Welcome to your Inventory
+                     </Typography>
+                  </Grid>
                   <Grid item>
                      <Button
                         className={classes.buttonStyle}
@@ -86,39 +90,39 @@ function Header(props) {
                </Grid>
             </Toolbar>
          </AppBar>
-         <AppBar
+         {/* <AppBar
             component="div"
             className={classes.secondaryBarStyle}
             position="static"
             elevation={0}
-         >
+            >
             <Toolbar>
-               <Grid container alignItems="center" spacing={1}>
-                  <Grid item xs>
+            <Grid container alignItems="center" spacing={1}>
+            <Grid item xs>
                      <Typography color="inherit" variant="h5" component="h1">
-                        Welcome to your Inventory
+                     Welcome to your Inventory
                      </Typography>
-                  </Grid>
-                  {/* <Grid item>
+                     </Grid>
+                     <Grid item>
                      <Button
-                        className={classes.button}
-                        variant="outlined"
-                        color="inherit"
-                        size="small"
+                     className={classes.button}
+                     variant="outlined"
+                     color="inherit"
+                     size="small"
                      >
-                        Web setup
+                     Web setup
                      </Button>
-                  </Grid>
-                  <Grid item>
+                     </Grid>
+                     <Grid item>
                      <Tooltip title="Help">
-                        <IconButton color="inherit">
-                           <HelpIcon />
-                        </IconButton>
+                     <IconButton color="inherit">
+                     <HelpIcon />
+                     </IconButton>
                      </Tooltip>
-                  </Grid> */}
-               </Grid>
-            </Toolbar>
-         </AppBar>
+                     </Grid>
+                     </Grid>
+                     </Toolbar>
+                  </AppBar> */}
          <AppBar
             component="div"
             className={classes.secondaryBarStyle}
@@ -144,7 +148,6 @@ Header.propTypes = {
 const styles = (theme) => ({
    menuButton: {
       marginLeft: -theme.spacing(1),
-      border: 'red solid 2px',
    },
    iconButtonAvatar: {
       padding: 4,
@@ -154,16 +157,19 @@ const styles = (theme) => ({
       backgroundColor: '#184059',
    },
    logoStyle: {
-      width: '200px',
+      backgroundColor: '#F2F2F2',
+      width: '150px',
       height: 'auto',
-      borderRadius: 0,
+      padding: '10px',
+      borderRadius: '5px',
    },
    buttonStyle: {
       color: '#F2F2F2',
       border: '1px solid #F2F2F2',
    },
    secondaryBarStyle: {
-      zIndex: 0,
+      position: 'fixed',
+      top: '90px',
       backgroundColor: '#184059',
    },
 });

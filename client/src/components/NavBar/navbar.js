@@ -29,9 +29,9 @@ function Navbar() {
    };
 
    return (
-      <Container className={classes.root} maxWidth="false">
+      <Container maxWidth="false">
          <AppBar className={classes.appBarStyle}>
-            <Grid container alignItems="center" style={{ padding: '0 10px' }}>
+            <Grid container alignItems="center" style={{ padding: '0 15px' }}>
                <Grid item className={classes.gridStyle} xs={12} md={3}>
                   <Button onClick={welcome}>
                      <Link href="/">
@@ -94,7 +94,6 @@ function Navbar() {
 }
 
 const useStyles = makeStyles((theme) => ({
-   root: {},
    appBarStyle: {
       backgroundColor: '#F2F2F2',
       borderBottom: '1px solid #730217',

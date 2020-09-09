@@ -72,7 +72,6 @@ const useStyles = makeStyles((theme) => ({
    },
    containerStyle: {
       backgroundColor: '#5D8AA6',
-      width: '100vw',
       minHeight: '100vh',
       margin: '0 auto',
       paddingBottom: '50px',

@@ -2,12 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import {
+   Divider,
+   Drawer,
+   List,
+   ListItem,
+   ListItemIcon,
+   ListItemText,
+   Grid,
+   Button,
+   Avatar,
+} from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home';
 import PeopleIcon from '@material-ui/icons/People';
 import DnsRoundedIcon from '@material-ui/icons/DnsRounded';
@@ -18,6 +23,7 @@ import SettingsInputComponentIcon from '@material-ui/icons/SettingsInputComponen
 import TimerIcon from '@material-ui/icons/Timer';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
+import logo from './img/logo-white.png';
 
 function Navigator(props) {
    const { classes, ...other } = props;
@@ -25,15 +31,11 @@ function Navigator(props) {
    return (
       <Drawer variant="permanent" {...other}>
          <List disablePadding>
-            <ListItem
-               className={clsx(
-                  classes.firebase,
-                  classes.item,
-                  classes.itemCategory
-               )}
-            >
-               Paperbase
-            </ListItem>
+            <Grid>
+               <Button href="/">
+                  <Avatar className={classes.logoStyle} src={logo} />
+               </Button>
+            </Grid>
             <ListItem className={clsx(classes.item, classes.itemCategory)}>
                <ListItemIcon className={classes.itemIcon}>
                   <HomeIcon />
@@ -129,6 +131,12 @@ const styles = (theme) => ({
    },
    divider: {
       marginTop: theme.spacing(2),
+   },
+   // Styling additions
+   logoStyle: {
+      width: '150px',
+      height: 'auto',
+      borderRadius: 0,
    },
 });
 
