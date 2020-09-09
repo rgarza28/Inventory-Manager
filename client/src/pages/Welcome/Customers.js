@@ -14,7 +14,7 @@ function Customers() {
 
    return (
       <Container
-         maxWidth="false"
+         maxWidth={false}
          className={classes.containerStyle}
          id="customers"
       >
@@ -31,9 +31,14 @@ function Customers() {
             className={classes.gridContainerStyle}
             justify="center"
          >
-            {customersData.map((data) => {
+            {customersData.map((data, index) => {
                return (
-                  <Grid item className={classes.gridStyle} xs>
+                  <Grid
+                     key={index + '-industriesData'}
+                     item
+                     className={classes.gridStyle}
+                     xs
+                  >
                      <Card className={classes.root}>
                         <Avatar
                            className={classes.avatarStyle}

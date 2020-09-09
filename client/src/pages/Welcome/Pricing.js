@@ -11,14 +11,17 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import StarIcon from '@material-ui/icons/StarBorder';
+import { useHistory } from 'react-router-dom';
 
 function Pricing() {
    const classes = useStyles();
+   const history = useHistory();
+   const signup = () => history.push('signup');
 
    return (
       <React.Fragment>
          <Container
-            maxWidth="false"
+            maxWidth={false}
             className={classes.containerStyle}
             id="pricing"
          >
@@ -53,10 +56,16 @@ function Pricing() {
                         />
                         <CardContent>
                            <div className={classes.cardPricing}>
-                              <Typography variant="h3" color="#730217">
+                              <Typography
+                                 variant="h3"
+                                 style={{ color: '#730217' }}
+                              >
                                  ${tier.price}
                               </Typography>
-                              <Typography variant="h6" color="#BF0426">
+                              <Typography
+                                 variant="h6"
+                                 style={{ color: '#BF0426' }}
+                              >
                                  /mo
                               </Typography>
                            </div>
@@ -108,6 +117,7 @@ function Pricing() {
             </Grid>
             <Button
                className={classes.containedButtonStyle}
+               onClick={signup}
                style={{ backgroundColor: '#BF0426', marginTop: '50px' }}
             >
                Start your free trial now
@@ -219,7 +229,7 @@ const tiers = [
          '250,000 API Access calls',
       ],
       buttonText: 'Get started',
-      buttonVariant: 'containedButtonStyle',
+      buttonVariant: 'contained',
    },
    {
       title: 'Large (Plus)',

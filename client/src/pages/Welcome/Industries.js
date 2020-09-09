@@ -14,7 +14,7 @@ function Industries() {
 
    return (
       <Container
-         maxWidth="false"
+         maxWidth={false}
          className={classes.containerStyle}
          id="industries"
       >
@@ -26,9 +26,14 @@ function Industries() {
             className={classes.gridContainerStyle}
             justify="center"
          >
-            {industriesData.map((data) => {
+            {industriesData.map((data, index) => {
                return (
-                  <Grid item className={classes.gridStyle} xs>
+                  <Grid
+                     key={index + '-industriesData'}
+                     item
+                     className={classes.gridStyle}
+                     xs
+                  >
                      <Card className={classes.root}>
                         <CardMedia
                            className={classes.media}

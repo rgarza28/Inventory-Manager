@@ -29,7 +29,7 @@ function Navbar() {
    };
 
    return (
-      <Container maxWidth="false">
+      <Container maxWidth={false}>
          <AppBar className={classes.appBarStyle}>
             <Grid container alignItems="center" style={{ padding: '0 15px' }}>
                <Grid item className={classes.gridStyle} xs={12} md={3}>

@@ -14,7 +14,7 @@ function Features() {
 
    return (
       <Container
-         maxWidth="false"
+         maxWidth={false}
          className={classes.containerStyle}
          id="features"
       >
@@ -26,10 +26,15 @@ function Features() {
             className={classes.gridContainerStyle}
             justify="center"
          >
-            {featuresData.map((data) => {
+            {featuresData.map((data, index) => {
                return (
-                  <Grid item className={classes.gridStyle} xs>
-                     <Card Card className={classes.root}>
+                  <Grid
+                     key={index + '-featuresData'}
+                     item
+                     className={classes.gridStyle}
+                     xs
+                  >
+                     <Card className={classes.root}>
                         <CardContent>
                            <Icon className={classes.iconStyle}>
                               {data.icon}

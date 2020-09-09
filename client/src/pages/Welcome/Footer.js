@@ -22,7 +22,7 @@ export default function Footer() {
    return (
       <div>
          <Container
-            maxWidth="false"
+            maxWidth={false}
             component="footer"
             className={classes.footer}
          >
@@ -72,7 +72,7 @@ export default function Footer() {
             </Container>
          </Container>
          <Container
-            maxWidth="false"
+            maxWidth={false}
             style={{
                backgroundColor: '#5D8AA6',
                color: '#F2F2F2',

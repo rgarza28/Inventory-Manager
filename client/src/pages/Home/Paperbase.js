@@ -9,7 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import Navigator from './Navigator';
+// import Navigator from './Navigator';
 import Header from './Header';
 import MaterialTableDemo from '../../components/Table';
 import Upload from '../../components/Upload';
@@ -28,15 +28,15 @@ function Paperbase(props) {
             <CssBaseline />
             <nav className={classes.drawer}>
                <Hidden smUp implementation="js">
-                  <Navigator
+                  {/* <Navigator
                      PaperProps={{ style: { width: drawerWidth } }}
                      variant="temporary"
                      open={mobileOpen}
                      onClose={handleDrawerToggle}
-                  />
+                  /> */}
                </Hidden>
                <Hidden xsDown implementation="css">
-                  <Navigator PaperProps={{ style: { width: drawerWidth } }} />
+                  {/* <Navigator PaperProps={{ style: { width: drawerWidth } }} /> */}
                </Hidden>
             </nav>
             <div className={classes.app}>
@@ -169,7 +169,7 @@ theme = {
    },
 };
 
-const drawerWidth = 200;
+const drawerWidth = 0;
 
 const styles = {
    root: {
