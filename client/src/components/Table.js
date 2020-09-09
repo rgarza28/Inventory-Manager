@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import MaterialTable from "material-table";
 
 export default function MaterialTableDemo() {
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     columns: [
-      { title: "Part Number", field: "partnumber" },
-      { title: "Product Image", field: "productimage", type: "image" },
-      { title: "Product Name", field: "productname" },
+      { title: "Part Number", field: "sku" },
+      // { title: "Product Image", field: "productimage", type: "image" },
+      { title: "Product Name", field: "productName" },
       {
         title: "Current Inventory Level",
-        field: "currentinvlevel",
+        field: "currentInventory",
         type: "numeric",
       },
       {
         title: "Minumum Inventory Level",
-        field: "mininvlevel",
+        field: "minInventory",
         type: "numeric",
       },
       {
@@ -24,7 +24,7 @@ export default function MaterialTableDemo() {
       },
       {
         title: "Retail Price ($)",
-        field: "retailprice",
+        field: "retail",
         type: "numeric",
       },
       {
@@ -40,28 +40,27 @@ export default function MaterialTableDemo() {
       },
     ],
     data: [
-      {
-        partnumber: "822-1000",
-        productimage: "",
-        productname: "Dell Chromebook 3100",
-        currentinvlevel: "10",
-        mininvlevel: 5,
-        productcategory: 1,
-        cost: 150,
-        retailprice: 250,
-      },
-      {
-        partnumber: "822-1001",
-        productimage: "",
-        productname: "Dell Chromebook 3120",
-        currentinvlevel: "6",
-        mininvlevel: 3,
-        productcategory: 1,
-        cost: 150,
-        retailprice: 300,
-      },
+      // {
+      //   sku: "",
+      //   productName: "",
+      //   description: "",
+      //   currentInventory: "10",
+      //   minInventory: 1,
+      //   cost: 1,
+      //   retail: 150,
+      // },
     ],
   });
+
+  let [sku, setSku] = useState();
+  let [productName, setProductName] = useState();
+  let [description, setDescription] = useState();
+  let [currentInventory, setcurrentInventory] = useState();
+  let [minInventory, setMinInventory] = useState();
+  let [cost, setCost] = useState();
+  let [retail, setRetail] = useState();
+
+  // let productNameValue = state.data.productName;
 
   return (
     <MaterialTable
@@ -76,6 +75,17 @@ export default function MaterialTableDemo() {
               setState((prevState) => {
                 const data = [...prevState.data];
                 data.push(newData);
+
+                sku = newData.sku;
+                productName = newData.productName;
+                description = newData.description;
+                currentInventory = newData.currentInventory;
+                minInventory = newData.minInventory;
+                cost = newData.cost;
+                retail = newData.retail;
+
+                // setProductName(productNameValue);
+                console.log(productName);
                 return { ...prevState, data };
               });
             }, 600);
