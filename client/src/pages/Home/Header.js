@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
@@ -12,10 +12,46 @@ import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import logoLevel from './img/logo-level.png';
 import UserContext from '../../context/UserContext';
+import Table from '../../components/Table';
+import NewProducts from '../../components/NewProducts';
+
+function TabPanel(props) {
+   const { children, value, index, ...other } = props;
+
+   return (
+      <div
+         role="tabpanel"
+         hidden={value !== index}
+         id={`simple-tabpanel-${index}`}
+         aria-labelledby={`simple-tab-${index}`}
+         {...other}
+      >
+         {value === index && (
+            <Box p={3}>
+               <Typography>{children}</Typography>
+            </Box>
+         )}
+      </div>
+   );
+}
+
+TabPanel.propTypes = {
+   children: PropTypes.node,
+   index: PropTypes.any.isRequired,
+   value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+   return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
+   };
+}
 
 function Header(props) {
    const { classes, onDrawerToggle } = props;
@@ -26,6 +62,11 @@ function Header(props) {
          user: undefined,
       });
       localStorage.setItem('auth-token', '');
+   };
+
+   const [value, setValue] = useState(0);
+   const handleChange = (event, newValue) => {
+      setValue(newValue);
    };
 
    return (
@@ -95,47 +136,30 @@ function Header(props) {
             className={classes.secondaryBarStyle}
             position="static"
             elevation={0}
-            >
-            <Toolbar>
-            <Grid container alignItems="center" spacing={1}>
-            <Grid item xs>
-                     <Typography color="inherit" variant="h5" component="h1">
-                     Welcome to your Inventory
-                     </Typography>
-                     </Grid>
-                     <Grid item>
-                     <Button
-                     className={classes.button}
-                     variant="outlined"
-                     color="inherit"
-                     size="small"
-                     >
-                     Web setup
-                     </Button>
-                     </Grid>
-                     <Grid item>
-                     <Tooltip title="Help">
-                     <IconButton color="inherit">
-                     <HelpIcon />
-                     </IconButton>
-                     </Tooltip>
-                     </Grid>
-                     </Grid>
-                     </Toolbar>
-                  </AppBar> */}
-         <AppBar
-            component="div"
-            className={classes.secondaryBarStyle}
-            position="static"
-            elevation={0}
          >
             <Tabs value={0} textColor="inherit">
-               <Tab textColor="inherit" label="Users" />
-               <Tab textColor="inherit" label="Sign-in method" />
-               <Tab textColor="inherit" label="Templates" />
-               <Tab textColor="inherit" label="Usage" />
+               <Tab textColor="inherit" label="INVENTORY" />
+               <Tab textColor="inherit" label="ADD NEW PRODUCT">
+                  <newProducts />
+               </Tab>
+            </Tabs>
+         </AppBar> */}
+         <AppBar position="static">
+            <Tabs
+               value={value}
+               onChange={handleChange}
+               aria-label="simple tabs example"
+            >
+               <Tab label="INVENTORY" {...a11yProps(0)} />
+               <Tab label="ADD NEW PRODUCTS" {...a11yProps(1)} />
             </Tabs>
          </AppBar>
+         <TabPanel value={value} index={0}>
+            <Table />
+         </TabPanel>
+         <TabPanel value={value} index={1}>
+            <NewProducts />
+         </TabPanel>
       </React.Fragment>
    );
 }
@@ -171,6 +195,12 @@ const styles = (theme) => ({
       position: 'fixed',
       top: '90px',
       backgroundColor: '#184059',
+   },
+
+   // Form styling
+   root: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.paper,
    },
 });
 
