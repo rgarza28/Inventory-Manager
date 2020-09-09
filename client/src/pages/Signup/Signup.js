@@ -54,7 +54,7 @@ function SignUp() {
    const signin = () => history.push('/signin');
 
    return (
-      <Container maxWidth="false" className={classes.containerStyle}>
+      <Container maxWidth={false} className={classes.containerStyle}>
          <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>

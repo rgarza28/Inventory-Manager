@@ -10,9 +10,12 @@ import {
 } from '@material-ui/core';
 import PlayArrow from '@material-ui/icons/PlayArrow';
 import TedTalkBackground from './images/fakeTedTalk.png';
+import { useHistory } from 'react-router-dom';
 
 function Tedtalk() {
    const classes = useStyles();
+   const history = useHistory();
+   const signup = () => history.push('/signup');
 
    return (
       <CardMedia
@@ -20,7 +23,7 @@ function Tedtalk() {
          image={TedTalkBackground}
          title="Featured on Fake TedTalk"
       >
-         <Grid xs={6} style={{ textAlign: 'left', marginLeft: '50px' }}>
+         <Grid style={{ textAlign: 'left', marginLeft: '50px', width: '50%' }}>
             <IconButton
                href="https://www.youtube.com/watch?v=_ZBKX-6Gz6A&feature=youtu.be"
                target="_blank"
@@ -34,7 +37,10 @@ function Tedtalk() {
                Pat Kelly, Thought Leader
             </Typography>
             <Link to="/signup" style={{ textDecoration: 'none' }}>
-               <Button className={classes.containedButtonStyle}>
+               <Button
+                  className={classes.containedButtonStyle}
+                  onClick={signup}
+               >
                   Start your free trial now
                </Button>
             </Link>

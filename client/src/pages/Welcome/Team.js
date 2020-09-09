@@ -14,7 +14,7 @@ function Team() {
    const classes = useStyles();
 
    return (
-      <Container maxWidth="false" className={classes.containerStyle} id="team">
+      <Container maxWidth={false} className={classes.containerStyle} id="team">
          <Typography variant="h3" className={classes.titleStyle}>
             Meet the brains behind Chief System
          </Typography>
@@ -23,9 +23,14 @@ function Team() {
             className={classes.gridContainerStyle}
             justify="center"
          >
-            {teamData.map((data) => {
+            {teamData.map((data, index) => {
                return (
-                  <Grid item className={classes.gridStyle} xs>
+                  <Grid
+                     key={index + '-teamData'}
+                     item
+                     className={classes.gridStyle}
+                     xs
+                  >
                      <Card className={classes.root}>
                         <CardActionArea href={data.link} target="_blank">
                            <CardContent className={classes.cardContentStyle}>

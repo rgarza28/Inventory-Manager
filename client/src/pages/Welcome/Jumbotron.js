@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 function Jumbotron() {
    const classes = useStyles();
    const history = useHistory();
-
    const signup = () => history.push('/signup');
 
    return (
