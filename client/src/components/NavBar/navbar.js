@@ -59,7 +59,7 @@ function Navbar() {
                      team
                   </Button>
                   <Box className={classes.boxStyle}>
-                     {userData.user ? (
+                     {userData.token ? (
                         <Button
                            className={classes.containedButtonStyle}
                            variant="text"

@@ -43,7 +43,7 @@ function Paperbase(props) {
                <Header onDrawerToggle={handleDrawerToggle} />
                <main className={classes.main}>
                   {/* <EnhancedTable /> */}
-                  <MaterialTableDemo />
+                  {/* <MaterialTableDemo /> */}
                   <Upload />
                </main>
                <footer className={classes.footer}>
@@ -72,6 +72,7 @@ let theme = createMuiTheme({
          fontWeight: 500,
          fontSize: 26,
          letterSpacing: 0.5,
+         border: 'red solid 2px',
       },
    },
    shape: {
@@ -192,6 +193,7 @@ const styles = {
       padding: theme.spacing(6, 4),
       background: '#eaeff1',
       marginTop: '20px',
+      border: 'red solid 2px',
    },
    footer: {
       padding: theme.spacing(2),

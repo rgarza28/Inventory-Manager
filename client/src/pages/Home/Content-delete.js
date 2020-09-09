@@ -77,13 +77,13 @@ const styles = (theme) => ({
       maxWidth: 936,
       margin: 'auto',
       overflow: 'hidden',
+      border: 'yellow solid 2px',
    },
    searchBar: {
       borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
    },
    searchInput: {
       fontSize: theme.typography.fontSize,
-      border: 'red solid 2px',
    },
    block: {
       display: 'block',

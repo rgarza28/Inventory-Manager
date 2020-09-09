@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
    },
    avatarStyle: {
       width: 200,
-      height: 'auto',
+      height: 200,
       margin: '0 auto 30px',
       borderRadius: '50%',
       border: 'solid 5px #F2F2F2',
@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
 
 const teamData = [
    {
-      photo: '/img/customers/Sidney_Lucas.jpg',
+      photo: '/img/team/Gerardo.png',
       name: 'Gerardo Gandara',
       specialty: 'Backend Developer',
       description: '“A bug that accidentally generates money”',
