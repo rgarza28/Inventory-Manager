@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -13,6 +14,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function FormPropsTextFields() {
+
+   const [sku, setsku] = useState();
+   const [productName, setproductName] = useState();
+   const [currentInventory, setcurrentInventory] = useState();
+   const [minInventory, setminInventory] = useState();
+   const [cost, setcost] = useState();
+   const [retail, setretail] = useState();
+
+   const submit = async (e) => {
+      e.preventDefault();
+      try {
+         let token = localStorage.getItem("auth-token");
+         const newProducts = { sku, productName, currentInventory, minInventory, cost, retail };
+         await axios.post("http://localhost:5000/api/products", newProducts, {
+            headers: { "x-auth-token": token }
+         });
+      } catch (err) {
+         if (err) throw err;
+      }
+   }
    const classes = useStyles();
 
    return (
@@ -25,6 +46,7 @@ function FormPropsTextFields() {
                InputLabelProps={{
                   shrink: true,
                }}
+               onChange={(e) => setsku(e.target.value)}
             />
             <TextField
                id="product-image"
@@ -33,6 +55,7 @@ function FormPropsTextFields() {
                InputLabelProps={{
                   shrink: true,
                }}
+               // onChange={(e) => set(e.target.value)}
             >
                <Button>Test</Button>
             </TextField>
@@ -43,6 +66,7 @@ function FormPropsTextFields() {
                InputLabelProps={{
                   shrink: true,
                }}
+               onChange={(e) => setproductName(e.target.value)}
             />
             <TextField
                id="current-inventory-level"
@@ -51,6 +75,7 @@ function FormPropsTextFields() {
                InputLabelProps={{
                   shrink: true,
                }}
+               onChange={(e) => setcurrentInventory(e.target.value)}
             />
             <TextField
                id="minimum-inventory-level"
@@ -59,6 +84,7 @@ function FormPropsTextFields() {
                InputLabelProps={{
                   shrink: true,
                }}
+               onChange={(e) => setminInventory(e.target.value)}
             />
             <TextField
                id="cost"
@@ -67,6 +93,7 @@ function FormPropsTextFields() {
                InputLabelProps={{
                   shrink: true,
                }}
+               onChange={(e) => setcost(e.target.value)}
             />
             <TextField
                id="retail-price"
@@ -75,8 +102,9 @@ function FormPropsTextFields() {
                InputLabelProps={{
                   shrink: true,
                }}
+               onChange={(e) => setretail(e.target.value)}
             />
-            <Button>Submit</Button>
+            <Button onClick={submit}>Submit</Button>
          </div>
       </form>
    );
