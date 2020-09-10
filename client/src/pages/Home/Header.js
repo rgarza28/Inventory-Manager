@@ -1,19 +1,22 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
-import Toolbar from '@material-ui/core/Toolbar';
-import Tooltip from '@material-ui/core/Tooltip';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import {
+   AppBar,
+   Avatar,
+   Container,
+   Button,
+   Grid,
+   Hidden,
+   IconButton,
+   Tab,
+   Tabs,
+   Toolbar,
+   Tooltip,
+   Box,
+   Typography,
+} from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import logoLevel from './img/logo-level.png';
 import UserContext from '../../context/UserContext';
@@ -131,35 +134,24 @@ function Header(props) {
                </Grid>
             </Toolbar>
          </AppBar>
-         {/* <AppBar
-            component="div"
-            className={classes.secondaryBarStyle}
-            position="static"
-            elevation={0}
-         >
-            <Tabs value={0} textColor="inherit">
-               <Tab textColor="inherit" label="INVENTORY" />
-               <Tab textColor="inherit" label="ADD NEW PRODUCT">
-                  <newProducts />
-               </Tab>
-            </Tabs>
-         </AppBar> */}
-         <AppBar position="static">
+         <AppBar position="fixed" className={classes.menuStyle}>
             <Tabs
                value={value}
                onChange={handleChange}
                aria-label="simple tabs example"
             >
                <Tab label="INVENTORY" {...a11yProps(0)} />
-               <Tab label="ADD NEW PRODUCTS" {...a11yProps(1)} />
+               <Tab label="ADD NEW PRODUCT" {...a11yProps(1)} />
             </Tabs>
          </AppBar>
-         <TabPanel value={value} index={0}>
-            <Table />
-         </TabPanel>
-         <TabPanel value={value} index={1}>
-            <NewProducts />
-         </TabPanel>
+         <Container maxWidth={false} style={{ marginTop: '50px' }}>
+            <TabPanel value={value} index={0}>
+               <Table />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+               <NewProducts />
+            </TabPanel>
+         </Container>
       </React.Fragment>
    );
 }
@@ -191,11 +183,16 @@ const styles = (theme) => ({
       color: '#F2F2F2',
       border: '1px solid #F2F2F2',
    },
-   secondaryBarStyle: {
+   menuStyle: {
       position: 'fixed',
       top: '90px',
       backgroundColor: '#184059',
    },
+   // secondaryBarStyle: {
+   //    position: 'fixed',
+   //    top: '90px',
+   //    backgroundColor: '#184059',
+   // },
 
    // Form styling
    root: {

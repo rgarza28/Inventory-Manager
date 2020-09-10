@@ -26,26 +26,26 @@ function Paperbase(props) {
       <ThemeProvider theme={theme}>
          <div className={classes.root}>
             <CssBaseline />
-            <nav className={classes.drawer}>
+            {/* <nav className={classes.drawer}>
                <Hidden smUp implementation="js">
-                  {/* <Navigator
+                  <Navigator
                      PaperProps={{ style: { width: drawerWidth } }}
                      variant="temporary"
                      open={mobileOpen}
                      onClose={handleDrawerToggle}
-                  /> */}
+                  />
                </Hidden>
                <Hidden xsDown implementation="css">
-                  {/* <Navigator PaperProps={{ style: { width: drawerWidth } }} /> */}
+                  <Navigator PaperProps={{ style: { width: drawerWidth } }} />
                </Hidden>
-            </nav>
+            </nav> */}
             <div className={classes.app}>
                <Header onDrawerToggle={handleDrawerToggle} />
-               <main className={classes.main}>
-                  {/* <EnhancedTable /> */}
-                  {/* <MaterialTableDemo /> */}
+               {/* <main className={classes.main}>
+                  <EnhancedTable />
+                  <MaterialTableDemo />
                   <Upload />
-               </main>
+               </main> */}
                <footer className={classes.footer}>
                   <Copyright />
                </footer>
@@ -72,7 +72,6 @@ let theme = createMuiTheme({
          fontWeight: 500,
          fontSize: 26,
          letterSpacing: 0.5,
-         border: 'red solid 2px',
       },
    },
    shape: {
@@ -193,11 +192,12 @@ const styles = {
       padding: theme.spacing(6, 4),
       background: '#eaeff1',
       marginTop: '20px',
-      border: 'red solid 2px',
+      // border: 'red solid 2px',
    },
    footer: {
       padding: theme.spacing(2),
-      background: '#eaeff1',
+      position: 'sticky',
+      bottom: 0,
    },
 };
 
@@ -206,7 +206,7 @@ function Copyright() {
       <Typography variant="body2" color="textSecondary" align="center">
          {'Copyright © '}
          <Link color="inherit" href="https://material-ui.com/">
-            Your Website
+            Chief System
          </Link>{' '}
          {new Date().getFullYear()}
          {'.'}

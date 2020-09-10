@@ -16,6 +16,7 @@ import UserContext from '../../context/UserContext';
 function Navbar() {
    const { userData, setUserData } = useContext(UserContext);
    const classes = useStyles();
+
    const history = useHistory();
    const welcome = () => history.push('/');
    const signin = () => history.push('/signin');
