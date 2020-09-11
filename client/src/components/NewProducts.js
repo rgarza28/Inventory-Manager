@@ -111,6 +111,7 @@ function FormPropsTextFields() {
             <Button
               variant="contained"
               className={classes.containedButtonStyle}
+              onClick={submit}
             >
               submit
             </Button>

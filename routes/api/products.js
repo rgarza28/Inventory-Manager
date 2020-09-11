@@ -35,7 +35,7 @@ router.post("/", auth, async (req, res) => {
 
 // Get all user products
 router.get("/all", auth, async (req, res) => {
-  let UserData = await UserProducts.find({ userId: req.user });
+  let UserData = await UserProducts.find({userId: req.user.id});
   res.json(UserData);
 });
 
