@@ -144,14 +144,12 @@ function Header(props) {
                <Tab label="ADD NEW PRODUCT" {...a11yProps(1)} />
             </Tabs>
          </AppBar>
-         <Container maxWidth={false} style={{ marginTop: '50px' }}>
-            <TabPanel value={value} index={0}>
-               <Table />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-               <NewProducts />
-            </TabPanel>
-         </Container>
+         <TabPanel value={value} index={0} style={{ marginTop: '50px' }}>
+            <Table />
+         </TabPanel>
+         <TabPanel value={value} index={1} style={{ marginTop: '50px' }}>
+            <NewProducts />
+         </TabPanel>
       </React.Fragment>
    );
 }

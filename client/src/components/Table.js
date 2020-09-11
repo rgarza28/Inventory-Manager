@@ -8,12 +8,12 @@ export default function MaterialTableDemo() {
          // { title: "Product Image", field: "productimage", type: "image" },
          { title: 'Product Name', field: 'productName' },
          {
-            title: 'Current Inventory Level',
+            title: 'Current Inventory',
             field: 'currentInventory',
             type: 'numeric',
          },
          {
-            title: 'Minumum Inventory Level',
+            title: 'Minumum Inventory',
             field: 'minInventory',
             type: 'numeric',
          },
@@ -69,28 +69,28 @@ export default function MaterialTableDemo() {
          data={state.data}
          style={{ boxShadow: '0 1px 3px #184059' }}
          editable={{
-            // onRowAdd: (newData) =>
-            //   new Promise((resolve) => {
-            //     setTimeout(() => {
-            //       resolve();
-            //       setState((prevState) => {
-            //         const data = [...prevState.data];
-            //         data.push(newData);
+            onRowAdd: (newData) =>
+               new Promise((resolve) => {
+                  setTimeout(() => {
+                     resolve();
+                     setState((prevState) => {
+                        const data = [...prevState.data];
+                        data.push(newData);
 
-            //         sku = newData.sku;
-            //         productName = newData.productName;
-            //         description = newData.description;
-            //         currentInventory = newData.currentInventory;
-            //         minInventory = newData.minInventory;
-            //         cost = newData.cost;
-            //         retail = newData.retail;
+                        sku = newData.sku;
+                        productName = newData.productName;
+                        description = newData.description;
+                        currentInventory = newData.currentInventory;
+                        minInventory = newData.minInventory;
+                        cost = newData.cost;
+                        retail = newData.retail;
 
-            //         // setProductName(productNameValue);
-            //         console.log(productName);
-            //         return { ...prevState, data };
-            //       });
-            //     }, 600);
-            //   }),
+                        // setProductName(productNameValue);
+                        console.log(productName);
+                        return { ...prevState, data };
+                     });
+                  }, 600);
+               }),
             onRowUpdate: (newData, oldData) =>
                new Promise((resolve) => {
                   setTimeout(() => {

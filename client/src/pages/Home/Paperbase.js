@@ -5,14 +5,12 @@ import {
    ThemeProvider,
    withStyles,
 } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { CssBaseline, Typography, Link } from '@material-ui/core';
+// import Hidden from '@material-ui/core/Hidden';
 // import Navigator from './Navigator';
 import Header from './Header';
-import MaterialTableDemo from '../../components/Table';
-import Upload from '../../components/Upload';
+// import MaterialTableDemo from '../../components/Table';
+// import Upload from '../../components/Upload';
 
 function Paperbase(props) {
    const { classes } = props;
@@ -192,7 +190,6 @@ const styles = {
       padding: theme.spacing(6, 4),
       background: '#eaeff1',
       marginTop: '20px',
-      // border: 'red solid 2px',
    },
    footer: {
       padding: theme.spacing(2),
