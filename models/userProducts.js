@@ -8,7 +8,7 @@ const UserProductSchema = new Schema({
         minInventory: { type: Number, require: true },
         cost: { type: Number, require: true },
         retail: { type: Number, require: true },
-        userId: {type: Schema.Types.ObjectId, ref: "user"}
+        userId: { type: String, required: true }
 });
 
 module.exports = UserProducts = mongoose.model("userProduct", UserProductSchema);
