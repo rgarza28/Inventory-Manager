@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+import axios from 'axios';
 import {
    Button,
    Container,
@@ -10,6 +14,25 @@ import { makeStyles } from '@material-ui/core/styles';
 import Upload from './Upload';
 
 function FormPropsTextFields() {
+   const [sku, setsku] = useState();
+   const [productName, setproductName] = useState();
+   const [currentInventory, setcurrentInventory] = useState();
+   const [minInventory, setminInventory] = useState();
+   const [cost, setcost] = useState();
+   const [retail, setretail] = useState();
+
+   const submit = async (e) => {
+      e.preventDefault();
+      try {
+         let token = localStorage.getItem("auth-token");
+         const newProducts = { sku, productName, currentInventory, minInventory, cost, retail };
+         await axios.post("http://localhost:5000/api/products", newProducts, {
+            headers: { "x-auth-token": token }
+         });
+      } catch (err) {
+         if (err) throw err;
+      }
+   }
    const classes = useStyles();
 
    return (
@@ -27,6 +50,7 @@ function FormPropsTextFields() {
                      shrink: true,
                   }}
                   className={classes.textFieldStyle}
+                  onChange={(e) => setsku(e.target.value)}
                />
                <TextField
                   id="product-name"
@@ -36,6 +60,7 @@ function FormPropsTextFields() {
                      shrink: true,
                   }}
                   className={classes.textFieldStyle}
+                  onChange={(e) => setproductName(e.target.value)}
                />
                <TextField
                   id="current-inventory"
@@ -45,6 +70,7 @@ function FormPropsTextFields() {
                      shrink: true,
                   }}
                   className={classes.textFieldStyle}
+                  onChange={(e) => setcurrentInventory(e.target.value)}
                />
                <TextField
                   id="minimum-inventory"
@@ -54,6 +80,7 @@ function FormPropsTextFields() {
                      shrink: true,
                   }}
                   className={classes.textFieldStyle}
+                  onChange={(e) => setminInventory(e.target.value)}
                />
                <TextField
                   id="cost"
@@ -63,6 +90,7 @@ function FormPropsTextFields() {
                      shrink: true,
                   }}
                   className={classes.textFieldStyle}
+                  onChange={(e) => setcost(e.target.value)}
                />
                <TextField
                   id="retail-price"
@@ -72,6 +100,7 @@ function FormPropsTextFields() {
                      shrink: true,
                   }}
                   className={classes.textFieldStyle}
+                  onChange={(e) => setretail(e.target.value)}
                />
                <Grid>
                   <Upload />
@@ -97,6 +126,7 @@ const useStyles = makeStyles((theme) => ({
          width: '25ch',
       },
    },
+
    NewProductsStyle: {
       backgroundColor: 'white',
       padding: '20px',
@@ -133,5 +163,6 @@ const useStyles = makeStyles((theme) => ({
       },
    },
 }));
+
 
 export default FormPropsTextFields;
