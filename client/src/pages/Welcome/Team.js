@@ -137,7 +137,7 @@ const teamData = [
       link: 'https://github.com/ggandara8',
    },
    {
-      photo: '/img/customers/Sidney_Lucas.jpg',
+      photo: '/img/team/Bobby.png',
       name: 'Robert Garza',
       specialty: 'Backend Developer',
       description: "“I don't know how it works, but it works”",

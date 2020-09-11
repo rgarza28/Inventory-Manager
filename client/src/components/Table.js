@@ -8,12 +8,12 @@ export default function MaterialTableDemo() {
          { title: 'Part Number', field: 'sku' },
          { title: 'Product Name', field: 'productName' },
          {
-            title: 'Current Inventory Level',
+            title: 'Current Inventory',
             field: 'currentInventory',
             type: 'numeric',
          },
          {
-            title: 'Minumum Inventory Level',
+            title: 'Minumum Inventory',
             field: 'minInventory',
             type: 'numeric',
          },
@@ -37,6 +37,7 @@ export default function MaterialTableDemo() {
          data={state.data}
          style={{ boxShadow: '0 1px 3px #184059' }}
          editable={{
+
             onRowUpdate: (newData, oldData) =>
                new Promise((resolve) => {
                   setTimeout(() => {
