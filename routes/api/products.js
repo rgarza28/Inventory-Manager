@@ -6,23 +6,22 @@ const UserProducts = require('../../models/userProducts');
 // Post user products
 router.post("/", auth, async (req, res) => {
   try {
-    const { sku, productName, description, 
+    const { sku, productName, 
         currentInventory, minInventory, cost, retail } = req.body;
-
+      
    //Validation
-   if (!sku || !productName || !description || !currentInventory || !minInventory || !cost || !retail) {
+   if (!sku || !productName || !currentInventory || !minInventory || !cost || !retail) {
     return res.status(400).json({ msg: 'Please enter all fields' });
    }
 
    const newProducts = new UserProducts({
        sku,
        productName,
-       description,
        currentInventory,
        minInventory,
        cost,
        retail,
-       userId: req.user
+       userId: req.user.id
    });
 
    const savedProducts = await newProducts.save();
@@ -36,7 +35,7 @@ router.post("/", auth, async (req, res) => {
 
 // Get all user products
 router.get("/all", auth, async (req, res) => {
-  let UserData = await UserProducts.find({ userId: req.user });
+  let UserData = await UserProducts.find({userId: req.user.id});
   res.json(UserData);
 });
 

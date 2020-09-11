@@ -4,10 +4,9 @@ const jwt = require('jsonwebtoken');
 //Protects authorization to other pages
 function auth(req, res, next) {
    const token = req.header('x-auth-token');
-
    //check for token
    if (!token) {
-      res.status(401).json({ msg: 'No token, authorization denied' });
+     return res.status(401).json({ msg: 'No token, authorization denied 1' });
    }
 
    try {
@@ -16,13 +15,13 @@ function auth(req, res, next) {
       if (!decoded){
          return res
          .status(401)
-         .json({ msg: 'No token, authorization denied' });
+         .json({ msg: 'No token, authorization denied 2' });
       }
       //add user from payload
-      req.user = decoded.id;
+      req.user = decoded;
       next();
    } catch (e) {
-      res.status(400).json({ msg: 'Token is not valid' });
+     return res.status(400).json({ msg: 'Token is not valid' });
    }
 }
 
