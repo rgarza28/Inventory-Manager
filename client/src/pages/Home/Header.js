@@ -5,7 +5,6 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import {
    AppBar,
    Avatar,
-   Container,
    Button,
    Grid,
    Hidden,
@@ -22,6 +21,8 @@ import logoLevel from './img/logo-level.png';
 import UserContext from '../../context/UserContext';
 import Table from '../../components/Table';
 import NewProducts from '../../components/NewProducts';
+import Upload from '../../components/Upload';
+import TableEmergency from '../../components/TableEmergency';
 
 function TabPanel(props) {
    const { children, value, index, ...other } = props;
@@ -83,6 +84,7 @@ function Header(props) {
                <Grid container spacing={1} alignItems="center">
                   <Grid>
                      <Button href="/">
+                        {/* <Upload /> */}
                         <Avatar className={classes.logoStyle} src={logoLevel} />
                      </Button>
                   </Grid>
@@ -144,7 +146,13 @@ function Header(props) {
                <Tab label="ADD NEW PRODUCT" {...a11yProps(1)} />
             </Tabs>
          </AppBar>
-         <TabPanel value={value} index={0} style={{ marginTop: '50px' }}>
+         <TabPanel
+            value={value}
+            index={0}
+            style={{ marginTop: '50px' }}
+            id="inventory"
+         >
+            {/* <TableEmergency /> */}
             <Table />
          </TabPanel>
          <TabPanel value={value} index={1} style={{ marginTop: '50px' }}>
@@ -186,11 +194,6 @@ const styles = (theme) => ({
       top: '90px',
       backgroundColor: '#184059',
    },
-   // secondaryBarStyle: {
-   //    position: 'fixed',
-   //    top: '90px',
-   //    backgroundColor: '#184059',
-   // },
 
    // Form styling
    root: {
