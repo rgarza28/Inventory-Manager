@@ -193,7 +193,7 @@ const styles = {
    },
    footer: {
       padding: theme.spacing(2),
-      position: 'sticky',
+      position: 'inherit',
       bottom: 0,
    },
 };
