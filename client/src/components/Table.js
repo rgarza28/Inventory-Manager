@@ -37,18 +37,16 @@ export default function MaterialTableDemo() {
          data={state.data}
          style={{ boxShadow: '0 1px 3px #184059' }}
          editable={{
-
-            onRowUpdate: (newData, oldData) =>
+            onRowUpdate: () =>
                new Promise((resolve) => {
                   setTimeout(() => {
-                     resolve();
-                     if (oldData) {
-                        setState((prevState) => {
-                           const data = [...prevState.data];
-                           data[data.indexOf(oldData)] = newData;
-                           return { ...prevState, data };
+                     let url = 'http://localhost:5000/api/products/:id';
+                       axios.put(url)
+                        .then(response => {
+                            resolve({
+                               data: response.data
+                            });
                         });
-                     }
                }, 600);
             }),
          }}

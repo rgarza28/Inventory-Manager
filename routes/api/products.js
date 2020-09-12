@@ -39,4 +39,12 @@ router.get("/all", auth, async (req, res) => {
   res.json(UserData);
 });
 
+router.put("/:id", async (req, res, next) => {
+  await UserProducts.findByIdAndUpdate({_id: req.params.id}, req.body).then(() => {
+    UserProducts.findOne({_id: req.params.id}).then((products) => {
+      res.json(products);
+    });
+  });
+});
+
 module.exports = router;
