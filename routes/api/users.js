@@ -1,19 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
-const User = require('../../models/User');
+const User = require("../../models/user");
 
-router.post('/', (req, res) => {
-   const { name, email, password } = req.body;
+router.post("/", (req, res) => {
+  const { name, email, password } = req.body;
 
-   //Validation
-   if (!name || !email || !password) {
-      return res.status(400).json({ msg: 'Please enter all fields' });
-   }
-
+  //Validation
+  if (!name || !email || !password) {
+    return res.status(400).json({ msg: "Please enter all fields" });
+  }
    // Email Validation
    if (email.length < 11) {
       return res.status(400).json({ msg: 'email is invalid' });
@@ -62,8 +61,10 @@ router.post('/', (req, res) => {
                );
             });
          });
+
       });
-   });
+    });
+  });
 });
 
 module.exports = router;
