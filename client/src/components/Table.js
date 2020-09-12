@@ -37,11 +37,11 @@ export default function MaterialTableDemo() {
          data={state.data}
          style={{ boxShadow: '0 1px 3px #184059' }}
          editable={{
-            onRowUpdate: () =>
+            onRowUpdate: (data) =>
                new Promise((resolve) => {
                   setTimeout(() => {
-                     let url = 'http://localhost:5000/api/products/:id';
-                       axios.put(url)
+                     let url = 'http://localhost:5000/api/products/' + data._id;
+                       axios.put(url, data)
                         .then(response => {
                             resolve({
                                data: response.data
@@ -62,6 +62,7 @@ export default function MaterialTableDemo() {
                headers: { "x-auth-token": token },
              })
                .then(response => {
+                  console.log(response);
                    resolve({
                       data: response.data
                    });
