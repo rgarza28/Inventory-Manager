@@ -17,6 +17,7 @@
     "axios": "^0.20.0",
     "cloudinary": "^1.23.0",
     "jspdf": "^2.1.0",
+    "jspdf-autotable": "^3.5.12",
     "material-table": "^1.69.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
