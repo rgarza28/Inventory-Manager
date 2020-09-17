@@ -30,6 +30,7 @@ export default function MaterialTableDemo() {
 		],
 	});
 
+
 	return (
 		<MaterialTable
 			title='Current Inventory Status'
@@ -72,4 +73,5 @@ export default function MaterialTableDemo() {
 			}
 		/>
 	);
+
 }
