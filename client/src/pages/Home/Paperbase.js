@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { createMuiTheme, ThemeProvider, withStyles } from '@material-ui/core/styles';
 import { CssBaseline, Typography, Link, Box, Grid } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Header from './Header';
+import { useHistory } from "react-router-dom";
 
 function Paperbase(props) {
-	const { classes } = props;
-	const [mobileOpen, setMobileOpen] = React.useState(false);
+   const { classes } = props;
+   const [mobileOpen, setMobileOpen] = React.useState(false);
+   const history = useHistory();
+
+   useEffect(() => {
+      let token = localStorage.getItem('auth-token');
+      if(!token){
+         console.log(token);
+         history.push("/");
+      }
+   }, []);
+
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
+
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -45,6 +57,7 @@ function Paperbase(props) {
 			</div>
 		</ThemeProvider>
 	);
+
 }
 
 Paperbase.propTypes = {

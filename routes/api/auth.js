@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
       jwt.sign(
         { id: user.id },
         process.env.MONGODB_URI,
-        { expiresIn: 3600 },
+        { expiresIn: 10800 },
         (err, token) => {
           if (err) throw err;
           res.json({
