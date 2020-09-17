@@ -1,29 +1,60 @@
-# Create React Express App
+<a href="https://lit-meadow-59526.herokuapp.com/" align="center">
+  <img src="readme-banner.png" height="100%">
+</a>
 
-## About This Boilerplate
+Access our app [here](https://lit-meadow-59526.herokuapp.com)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+<br>
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Title
 
-## Starting the app locally
+CHIEF System Inventory Manager
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+<br>
 
-```
-npm install
-```
+## Development Team
 
-This should install node modules within the server and the client folder.
+[Bobby Garza](https://github.com/rgarza28)
 
-After both installations complete, run the following command in your terminal:
+[Erick Adams](https://github.com/n2deep56)
 
-```
-npm start
-```
+[Gerardo Gandara](https://github.com/ggandara8)
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+[Jeuel Viveros](https://github.com/vjeuel)
 
-## Deployment (Heroku)
+<br>
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+## Description
+
+Welcome to CHIEF System Inventory Manager, a Full-Stack React app where small business owners can manage their inventory.
+
+<br>
+
+## User Story
+
+As a small retail business owner I need to be able to manage my inventory without super expensive software. I need something budget friendly but still functional that would allow me to monitor my inventory and keep track of all the merchandise I have on hand.
+
+<br>
+
+## Benefits
+
+Users can add new products with descriptions, view cost/price to view profit margins. Users can also export inventory list to a PDF file and open in the browser for printing or saving.
+
+<br>
+
+## Technologies
+
+React
+Material UI
+JWT
+MongoDB
+Cloudinary
+
+<br>
+
+## Future Developments
+
+Upload photos of new inventory
+Set alerts for low stock levels
+Multi-currency capability
+Ability to add and manage freight cost
