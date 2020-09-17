@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
    createMuiTheme,
@@ -6,15 +6,21 @@ import {
    withStyles,
 } from '@material-ui/core/styles';
 import { CssBaseline, Typography, Link } from '@material-ui/core';
-// import Hidden from '@material-ui/core/Hidden';
-// import Navigator from './Navigator';
 import Header from './Header';
-// import MaterialTableDemo from '../../components/Table';
-// import Upload from '../../components/Upload';
+import { useHistory } from "react-router-dom";
 
 function Paperbase(props) {
    const { classes } = props;
    const [mobileOpen, setMobileOpen] = React.useState(false);
+   const history = useHistory();
+
+   useEffect(() => {
+      let token = localStorage.getItem('auth-token');
+      if(!token){
+         console.log(token);
+         history.push("/");
+      }
+   }, []);
 
    const handleDrawerToggle = () => {
       setMobileOpen(!mobileOpen);
@@ -24,26 +30,8 @@ function Paperbase(props) {
       <ThemeProvider theme={theme}>
          <div className={classes.root}>
             <CssBaseline />
-            {/* <nav className={classes.drawer}>
-               <Hidden smUp implementation="js">
-                  <Navigator
-                     PaperProps={{ style: { width: drawerWidth } }}
-                     variant="temporary"
-                     open={mobileOpen}
-                     onClose={handleDrawerToggle}
-                  />
-               </Hidden>
-               <Hidden xsDown implementation="css">
-                  <Navigator PaperProps={{ style: { width: drawerWidth } }} />
-               </Hidden>
-            </nav> */}
             <div className={classes.app}>
                <Header onDrawerToggle={handleDrawerToggle} />
-               {/* <main className={classes.main}>
-                  <EnhancedTable />
-                  <MaterialTableDemo />
-                  <Upload />
-               </main> */}
                <footer className={classes.footer}>
                   <Copyright />
                </footer>
