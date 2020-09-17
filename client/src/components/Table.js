@@ -3,7 +3,6 @@ import MaterialTable from "material-table";
 import axios from "axios";
 
 export default function MaterialTableDemo() {
-
   const [state, setState] = useState({
     columns: [
       { title: "Part Number", field: "sku" },
@@ -65,7 +64,7 @@ export default function MaterialTableDemo() {
               headers: { "x-auth-token": token },
             })
             .then((response) => {
-              console.log(response);
+              // console.log(response);
               resolve({
                 data: response.data,
               });
@@ -74,5 +73,4 @@ export default function MaterialTableDemo() {
       }
     />
   );
-
 }
