@@ -3,6 +3,7 @@ import MaterialTable from "material-table";
 import axios from "axios";
 
 export default function MaterialTableDemo() {
+
   const [state, setState] = useState({
     columns: [
       { title: "Part Number", field: "sku" },
@@ -73,4 +74,5 @@ export default function MaterialTableDemo() {
       }
     />
   );
+
 }
